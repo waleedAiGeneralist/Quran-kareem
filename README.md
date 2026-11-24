@@ -8,13 +8,19 @@ built in the same style as the teacher's Para 1 and Para 3 sample pages (مجت�
 - Every page has a **para dropdown** and a **surah dropdown**, plus links to the previous/next para and back to the home page.
 - Choosing a surah opens the right para and scrolls to the surah's heading. Direct links look like `para-15.html#s18`.
 - `pages/NNN.jpg` are the mushaf page images, named by the printed page number (001 = cover).
-- `assets/` holds the shared CSS/JS (`style.css`, `para.js`, `nav.js`, `data.js`) and the logo.
+- `assets/` holds the shared CSS/JS (`style.css`, `para.js`, `nav.js`, `data.js`, `i18n.js`, `index.js`) and the logo.
 
 ## v2 (client feedback)
 - **پٹی چھپائیں / پٹی دکھائیں**: hide the whole top bar for a full-screen mushaf; a small floating button brings it back (remembered on the device).
 - **Page zoom** (− ۱۰۰٪ +, 50%–250% in 25% steps, keyboard `+` `-` `0`); highlights stay aligned at every zoom; browser pinch-zoom still works.
 - Compact header (2 rows on desktop, 4 slim rows on phones), Google Fonts (Noto Nastaliq Urdu, Noto Naskh Arabic, Poppins).
 - Academy links on every mushaf page (moqacademy.pk / onlinequranstudy.com) and a footer with Facebook, websites and WhatsApp.
+
+## v3
+- Roomier layout (centred header with consistent padding and gaps; padded content, index and footer).
+- Fonts: Noto Naskh Arabic for Urdu/Arabic UI, Amiri for Quranic para/surah names, Gulzar for the large academy name, Inter + Poppins for English.
+- Language switch اردو / عربي / English (saved on the device; English switches the layout to left-to-right). Only the website text changes; the Quran pages and data never change.
+- Light / dark theme button (follows the device setting until you choose; saved on the device).
 
 ## Host on GitHub Pages
 1. Create a new repository on GitHub (e.g. `quran-kareem`).

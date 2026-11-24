@@ -5,9 +5,10 @@ const Q = window.QK, PAGES = Q.pages;
 const IMGS = PAGES.map(pg => "pages/" + pg.img + ".jpg");
 const SURAH = window.QK_SURAHS.map(s => s[0]);
 const KEY = "quran-cfg";
-const ud = n => String(n).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹".charAt(+d));
+const I = window.QK_I18N, T = I.t;
+const ud = n => I.num(n);
 const $ = id => document.getElementById(id);
-const pgLabel = p => PAGES[p].cover ? "سرورق" : "صفحہ " + ud(PAGES[p].page);
+const pgLabel = p => PAGES[p].cover ? T("cover") : T("page_n", { n:ud(PAGES[p].page) });
 
 /* ---------- رنگوں کی فہرستیں: [نام, اندرونی رنگ, نمونہ/کنارہ] ---------- */
 const AYAH_C = [
@@ -106,7 +107,7 @@ function buildPages(){
     const blk = document.createElement("section"); blk.className = "pgb"; blk.id = "pgb" + p;
     const bar = document.createElement("div"); bar.className = "plinks";
     bar.innerHTML = '<a href="https://moqacademy.pk/" target="_blank" rel="noopener">https://moqacademy.pk</a>' +
-      '<span class="pno">' + pgLabel(p) + '</span>' +
+      '<span class="pno" data-p="' + p + '">' + pgLabel(p) + '</span>' +
       '<a href="https://onlinequranstudy.com/" target="_blank" rel="noopener">https://onlinequranstudy.com/</a>';
     blk.appendChild(bar);
     const d = document.createElement("div"); d.className = "pg"; d.id = "pg" + p;
@@ -175,14 +176,14 @@ function drawHighlight(){
 
 /* ---------- حالت کی پٹی ---------- */
 function toast(msg){ const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), 2200); }
-const name = a => `سورۃ ${SURAH[a.surah]} — آیت ${ud(a.num)}`;
+const name = a => T("st_name", { s:I.surahName(a.surah), n:ud(a.num) });
 function updateUI(){
-  let main = "کسی آیت پر کلک کریں", sub = "1 کلک = پوری آیت · 2 کلک = غلط لفظ · 3 کلک = لفظ بہ لفظ";
+  let main = T("st_idle"), sub = T("st_idle_sub");
   if (S.ayah !== null) {
     const a = ayahs[S.ayah]; main = name(a);
-    if (S.mode === "ayah") sub = "پوری آیت منتخب ہے — غلط لفظ پر ڈبل کلک کریں";
-    if (S.mode === "mistake") { const t = tokens[S.lock]; sub = `لفظ ${ud(t.wi+1)}/${ud(a.words.length)} پر غلطی — درست ہونے تک ہائی لائٹر رکا ہے (✓ دبائیں یا لفظ پر کلک کریں)`; }
-    if (S.mode === "track") { const t = tokens[words[S.pos]]; sub = S.lock !== null ? `لفظ ${ud(t.wi+1)}/${ud(a.words.length)} پر غلطی — پہلے درست کریں (✓)` : `لفظ بہ لفظ: ${ud(t.wi+1)}/${ud(a.words.length)}`; }
+    if (S.mode === "ayah") sub = T("st_ayah");
+    if (S.mode === "mistake") { const t = tokens[S.lock]; sub = T("st_mist", { i:ud(t.wi+1), t:ud(a.words.length) }); }
+    if (S.mode === "track") { const t = tokens[words[S.pos]]; sub = T(S.lock !== null ? "st_lock" : "st_track", { i:ud(t.wi+1), t:ud(a.words.length) }); }
   }
   $("status").innerHTML = main + "<small>" + sub + "</small>";
   const tr = S.mode === "track";
@@ -191,7 +192,7 @@ function updateUI(){
   $("bOk").disabled = S.lock === null;
   $("bAuto").disabled = !tr; $("bAuto").classList.toggle("on", !!S.auto);
   $("bAuto").querySelector(".i").textContent = S.auto ? "⏸" : "▶";
-  $("bAuto").querySelector(".l").textContent = S.auto ? "رکیں" : "آٹو";
+  $("bAuto").querySelector(".l").textContent = T(S.auto ? "stop" : "auto");
   $("bClear").disabled = S.mode === "idle";
 }
 function render(){ drawHighlight(); updateUI(); setHdr(); }
@@ -231,7 +232,7 @@ function corrected(){
   setTimeout(() => { S.flash = null; drawHighlight(); }, 900);
 }
 function blocked(){
-  toast("⚠ پہلے غلطی درست کریں (✓) — تب تک ہائی لائٹر آگے نہیں بڑھے گا");
+  toast(T("blocked"));
   const g = S.lock !== null ? document.querySelector(`#pg${tokens[S.lock].p} .hl`) : null;
   if (g) { g.classList.remove("shake"); void g.getBoundingClientRect(); g.classList.add("shake"); }
 }
@@ -306,7 +307,7 @@ addEventListener("scroll", () => {
 /* ---------- رنگ کا پینل ---------- */
 function mkSw(box, nm, color, cls, fn){
   const b = document.createElement("button"); b.type = "button"; b.className = "sw" + (cls ? " " + cls : "");
-  if (color) b.style.background = color; b.title = nm; b.setAttribute("aria-label", nm);
+  if (color) b.style.background = color; b.dataset.cn = nm; b.title = I.cname(nm); b.setAttribute("aria-label", I.cname(nm));
   b.addEventListener("click", fn); box.appendChild(b);
 }
 function markSel(){
@@ -332,13 +333,14 @@ if (window.ResizeObserver) new ResizeObserver(setHdr).observe($("hdr"));
 const ZKEY = "qk-zoom", ZMIN = 0.5, ZMAX = 2.5, ZSTEP = 0.25;
 let Z = 1;
 try { const z = parseFloat(localStorage.getItem(ZKEY)); if (z >= ZMIN && z <= ZMAX) Z = Math.round(z / ZSTEP) * ZSTEP; } catch(e) {}
-function baseW(){ return Math.min(904, document.documentElement.clientWidth - 16); }
+function baseW(){ const m = document.querySelector("main"), cs = getComputedStyle(m);
+  return Math.min(904, document.documentElement.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)); }
 function applyZoom(){
   const w = $("wrap");
   w.style.setProperty("--pw", Math.round(baseW() * Z) + "px");
   document.body.classList.toggle("zoomed", Z > 1);
   w.style.setProperty("--ww", w.clientWidth + "px");
-  $("zReset").textContent = ud(Math.round(Z * 100)) + "٪";
+  $("zReset").textContent = ud(Math.round(Z * 100)) + T("pct");
   $("zOut").disabled = Z <= ZMIN + 1e-9; $("zIn").disabled = Z >= ZMAX - 1e-9;
 }
 function setZoom(z){
@@ -351,13 +353,21 @@ function setZoom(z){
   applyZoom();
   if (r0) { const r1 = e0.getBoundingClientRect(); window.scrollTo({ top: window.scrollY + r1.top + f * r1.height - mid }); }
   const w = $("wrap"); w.scrollLeft = (w.scrollWidth - w.clientWidth) / 2 * (getComputedStyle(w).direction === "rtl" ? -1 : 1);
-  toast("زوم: " + ud(Math.round(Z * 100)) + "٪");
+  toast(T("z_toast", { n:ud(Math.round(Z * 100)) + T("pct") }));
 }
 function zoomStep(d){ setZoom(Z + d * ZSTEP); }
 $("zIn").onclick = () => zoomStep(1);
 $("zOut").onclick = () => zoomStep(-1);
 $("zReset").onclick = () => setZoom(1);
 addEventListener("resize", applyZoom);
+
+/* ---------- زبان بدلنے پر ---------- */
+addEventListener("qk-lang", () => {
+  Array.prototype.forEach.call(sel.options, o => { o.textContent = pgLabel(+o.value); });
+  document.querySelectorAll(".plinks .pno").forEach(e => { e.textContent = pgLabel(+e.dataset.p); });
+  document.querySelectorAll(".sw").forEach(b => { b.title = I.cname(b.dataset.cn); b.setAttribute("aria-label", b.title); });
+  $("gapv").textContent = ud(G); applyZoom(); updateUI(); setHdr();
+});
 
 $("gapv").textContent = ud(G);
 tokenize(); buildPages(); applyZoom(); markSel(); render();
