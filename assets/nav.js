@@ -30,3 +30,25 @@
     });
   }
 })();
+/* اوپر کی پٹی چھپائیں / دکھائیں (حالت اسی ڈیوائس میں محفوظ) */
+(function(){
+  'use strict';
+  var hide = document.getElementById("hdrHide"), show = document.getElementById("hdrShow"), hdr = document.getElementById("hdr");
+  if (!hide || !show || !hdr) return;
+  var root = document.documentElement;
+  function setHdr(){ root.style.setProperty("--hdr", hdr.offsetHeight + "px"); }
+  function set(off, keepPlace){
+    // اسکرین پر جو حصہ نظر آ رہا ہے وہی رہے
+    var y0 = hdr.offsetHeight;
+    root.classList.toggle("hdr-off", off);
+    try { localStorage.setItem("qk-hdr", off ? "0" : "1"); } catch(e) {}
+    var cp = document.getElementById("cpanel"), cb = document.getElementById("colbtn");
+    if (off && cp && !cp.hidden && cb) cb.click();
+    setHdr();
+    if (keepPlace && window.scrollY > 0) window.scrollBy(0, off ? -y0 : hdr.offsetHeight);
+    (off ? show : hide).focus({ preventScroll:true });
+  }
+  hide.addEventListener("click", function(){ set(true, true); });
+  show.addEventListener("click", function(){ set(false, true); });
+  setHdr();
+})();

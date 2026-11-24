@@ -103,7 +103,13 @@ function segments(ayah){
 function buildPages(){
   const wrap = $("wrap"); wrap.innerHTML = "";
   PAGES.forEach((pg, p) => {
-    const d = document.createElement("section"); d.className = "pg"; d.id = "pg" + p;
+    const blk = document.createElement("section"); blk.className = "pgb"; blk.id = "pgb" + p;
+    const bar = document.createElement("div"); bar.className = "plinks";
+    bar.innerHTML = '<a href="https://moqacademy.pk/" target="_blank" rel="noopener">https://moqacademy.pk</a>' +
+      '<span class="pno">' + pgLabel(p) + '</span>' +
+      '<a href="https://onlinequranstudy.com/" target="_blank" rel="noopener">https://onlinequranstudy.com/</a>';
+    blk.appendChild(bar);
+    const d = document.createElement("div"); d.className = "pg"; d.id = "pg" + p;
     d.style.aspectRatio = pg.W + "/" + pg.H;
     const img = document.createElement("img"); img.src = IMGS[p]; img.alt = pgLabel(p);
     img.loading = p < 2 ? "eager" : "lazy"; img.decoding = "async"; img.width = pg.W; img.height = pg.H; d.appendChild(img);
@@ -111,7 +117,7 @@ function buildPages(){
     el("g", { class:"blend base" }, svg);
     el("g", { class:"blend hl" }, svg);
     el("g", { class:"hits" }, svg);
-    wrap.appendChild(d);
+    blk.appendChild(d); wrap.appendChild(blk);
   });
   drawBase(); drawHits();
 }
@@ -184,7 +190,8 @@ function updateUI(){
   $("bBad").disabled = !(tr && S.lock === null);
   $("bOk").disabled = S.lock === null;
   $("bAuto").disabled = !tr; $("bAuto").classList.toggle("on", !!S.auto);
-  $("bAuto").textContent = S.auto ? "⏸ رکیں" : "▶ آٹو";
+  $("bAuto").querySelector(".i").textContent = S.auto ? "⏸" : "▶";
+  $("bAuto").querySelector(".l").textContent = S.auto ? "رکیں" : "آٹو";
   $("bClear").disabled = S.mode === "idle";
 }
 function render(){ drawHighlight(); updateUI(); setHdr(); }
@@ -267,6 +274,10 @@ $("gap").oninput = () => { G = +$("gap").value; $("gapv").textContent = ud(G); c
 addEventListener("keydown", e => {
   const tg = e.target.tagName; if (tg === "INPUT" || tg === "SELECT") return;
   const k = e.key;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;   // براؤزر کا اپنا زوم (Ctrl +) نہ روکیں
+  if (k === "+" || k === "=") { e.preventDefault(); zoomStep(1); return; }
+  if (k === "-" || k === "_") { e.preventDefault(); zoomStep(-1); return; }
+  if (k === "0") { e.preventDefault(); setZoom(1); return; }
   if (k === " " || (k === "Enter" && S.lock === null)) { if (S.mode === "track") { e.preventDefault(); step(1); } }
   else if (k === "Enter" && S.lock !== null) corrected();
   else if (k === "ArrowLeft" || k === "ArrowDown") { if (S.mode === "track") { e.preventDefault(); step(1); } }
@@ -280,7 +291,7 @@ addEventListener("keydown", e => {
 /* ---------- صفحہ چننے والی فہرست ---------- */
 const sel = $("pgsel");
 PAGES.forEach((pg, i) => { const o = document.createElement("option"); o.value = i; o.textContent = pgLabel(i); sel.appendChild(o); });
-sel.addEventListener("change", () => { const e = $("pg" + sel.value); if (e) e.scrollIntoView({ behavior:"smooth", block:"start" }); });
+sel.addEventListener("change", () => { const e = $("pgb" + sel.value); if (e) e.scrollIntoView({ behavior:"smooth", block:"start" }); });
 let ticking = false, curPage = 0;
 addEventListener("scroll", () => {
   if (ticking) return; ticking = true;
@@ -315,8 +326,41 @@ function setHdr(){ document.documentElement.style.setProperty("--hdr", $("hdr").
 addEventListener("resize", setHdr);
 if (window.ResizeObserver) new ResizeObserver(setHdr).observe($("hdr"));
 
+/* ---------- صفحہ زوم (۵۰٪ تا ۲۵۰٪) ---------- */
+// تصویر اور SVG ایک ہی ڈبے (.pg) میں ہیں اور SVG کا viewBox تصویر کے پکسلز میں ہے،
+// اس لیے ڈبے کی چوڑائی بدلنے سے ہائی لائٹ ہر زوم پر تصویر کے ساتھ بالکل جڑی رہتی ہے۔
+const ZKEY = "qk-zoom", ZMIN = 0.5, ZMAX = 2.5, ZSTEP = 0.25;
+let Z = 1;
+try { const z = parseFloat(localStorage.getItem(ZKEY)); if (z >= ZMIN && z <= ZMAX) Z = Math.round(z / ZSTEP) * ZSTEP; } catch(e) {}
+function baseW(){ return Math.min(904, document.documentElement.clientWidth - 16); }
+function applyZoom(){
+  const w = $("wrap");
+  w.style.setProperty("--pw", Math.round(baseW() * Z) + "px");
+  document.body.classList.toggle("zoomed", Z > 1);
+  w.style.setProperty("--ww", w.clientWidth + "px");
+  $("zReset").textContent = ud(Math.round(Z * 100)) + "٪";
+  $("zOut").disabled = Z <= ZMIN + 1e-9; $("zIn").disabled = Z >= ZMAX - 1e-9;
+}
+function setZoom(z){
+  z = Math.min(ZMAX, Math.max(ZMIN, Math.round(z / ZSTEP) * ZSTEP));
+  if (z === Z) { applyZoom(); return; }
+  // جو صفحہ اسکرین کے بیچ میں ہے، زوم کے بعد بھی وہی جگہ بیچ میں رہے
+  const mid = innerHeight * 0.45, i = curPage, e0 = $("pg" + i), r0 = e0 ? e0.getBoundingClientRect() : null;
+  const f = r0 && r0.height ? (mid - r0.top) / r0.height : 0;
+  Z = z; try { localStorage.setItem(ZKEY, String(Z)); } catch(e) {}
+  applyZoom();
+  if (r0) { const r1 = e0.getBoundingClientRect(); window.scrollTo({ top: window.scrollY + r1.top + f * r1.height - mid }); }
+  const w = $("wrap"); w.scrollLeft = (w.scrollWidth - w.clientWidth) / 2 * (getComputedStyle(w).direction === "rtl" ? -1 : 1);
+  toast("زوم: " + ud(Math.round(Z * 100)) + "٪");
+}
+function zoomStep(d){ setZoom(Z + d * ZSTEP); }
+$("zIn").onclick = () => zoomStep(1);
+$("zOut").onclick = () => zoomStep(-1);
+$("zReset").onclick = () => setZoom(1);
+addEventListener("resize", applyZoom);
+
 $("gapv").textContent = ud(G);
-tokenize(); buildPages(); markSel(); render();
+tokenize(); buildPages(); applyZoom(); markSel(); render();
 
 /* ---------- سورت پر جانا (#s18 وغیرہ) ---------- */
 function goSurah(n, smooth){

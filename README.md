@@ -10,6 +10,12 @@ built in the same style as the teacher's Para 1 and Para 3 sample pages (مجت�
 - `pages/NNN.jpg` are the mushaf page images, named by the printed page number (001 = cover).
 - `assets/` holds the shared CSS/JS (`style.css`, `para.js`, `nav.js`, `data.js`) and the logo.
 
+## v2 (client feedback)
+- **پٹی چھپائیں / پٹی دکھائیں**: hide the whole top bar for a full-screen mushaf; a small floating button brings it back (remembered on the device).
+- **Page zoom** (− ۱۰۰٪ +, 50%–250% in 25% steps, keyboard `+` `-` `0`); highlights stay aligned at every zoom; browser pinch-zoom still works.
+- Compact header (2 rows on desktop, 4 slim rows on phones), Google Fonts (Noto Nastaliq Urdu, Noto Naskh Arabic, Poppins).
+- Academy links on every mushaf page (moqacademy.pk / onlinequranstudy.com) and a footer with Facebook, websites and WhatsApp.
+
 ## Host on GitHub Pages
 1. Create a new repository on GitHub (e.g. `quran-kareem`).
 2. Upload the **contents** of this folder to the repository root. `index.html` must be at the top level.

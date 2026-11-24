@@ -3,27 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>قرآنِ حکیم — مکمل ۳۰ پارے | مجتبٰی آن لائن قرآن اکیڈمی</title>
+<title>قرآنِ حکیم — مکمل ۳۰ پارے | مجتبیٰ آن لائن قرآن اکیڈمی</title>
 <meta name="description" content="مکمل قرآنِ حکیم (۳۰ پارے، ۱۱۴ سورتیں) — ۱۶ سطری چار رنگی تجویدی نسخہ، آیت اور لفظ بہ لفظ ہائی لائٹ کے ساتھ">
 <meta name="theme-color" content="#16264e">
 <link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<script>try{if(localStorage.getItem("qk-hdr")==="0")document.documentElement.classList.add("hdr-off");}catch(e){}</script>
 </head>
-<body>
+<body class="index">
 <header id="hdr">
   <div class="h1row">
-    <img src="assets/logo.jpg" alt="مجتبٰی آن لائن قرآن اکیڈمی کا لوگو" width="42" height="42">
+    <a class="logo" href="index.html" title="فہرست"><img src="assets/logo.jpg" alt="مجتبیٰ آن لائن قرآن اکیڈمی کا لوگو" width="38" height="38"></a>
     <div class="titles">
       <h1>قرآنِ حکیم <span class="gold">مکمل ۳۰ پارے</span></h1>
-      <div class="brand">مجتبٰی آن لائن قرآن اکیڈمی</div>
+      <div class="brand">مجتبیٰ آن لائن قرآن اکیڈمی</div>
     </div>
-    <a class="wa-chip" href="https://wa.me/923132309729" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm5.8 14c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12a14 14 0 0 1-3.2-1.5c-2.6-1.7-4.2-4.3-4.35-4.5-.12-.2-1-1.4-1-2.7 0-1.3.65-1.9.9-2.2.2-.25.5-.3.7-.3h.5c.17 0 .4-.05.6.45.25.6.8 2 .85 2.15.07.15.1.3 0 .5-.1.2-.15.3-.3.5l-.45.5c-.15.15-.3.3-.12.6.17.3.75 1.25 1.6 2 1.1 1 2 1.3 2.3 1.45.3.15.5.12.65-.07.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.27.1 1.7.8 2 .95.3.15.5.22.55.35.07.12.07.7-.18 1.4z"/></svg>
-      0313 2309729
-    </a>
+    <div class="hact">
+      <a class="wa-chip" href="https://wa.me/923132309729" target="_blank" rel="noopener" aria-label="WhatsApp 0313 2309729"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm5.8 14c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12a14 14 0 0 1-3.2-1.5c-2.6-1.7-4.2-4.3-4.35-4.5-.12-.2-1-1.4-1-2.7 0-1.3.65-1.9.9-2.2.2-.25.5-.3.7-.3h.5c.17 0 .4-.05.6.45.25.6.8 2 .85 2.15.07.15.1.3 0 .5-.1.2-.15.3-.3.5l-.45.5c-.15.15-.3.3-.12.6.17.3.75 1.25 1.6 2 1.1 1 2 1.3 2.3 1.45.3.15.5.12.65-.07.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.27.1 1.7.8 2 .95.3.15.5.22.55.35.07.12.07.7-.18 1.4z"/></svg><span class="t">0313 2309729</span></a>
+      
+    </div>
   </div>
   <nav class="navrow" aria-label="پارہ اور سورت">
-    <a class="nb" href="index.html" title="فہرست">🏠<span class="t"> فہرست</span></a>
+    <a class="nb home" href="index.html" title="فہرست" aria-label="فہرست">🏠<span class="t"> فہرست</span></a>
     
     <select id="parasel" aria-label="پارہ"></select>
     <select id="surahsel" aria-label="سورت"></select>
@@ -32,7 +36,20 @@
 </header>
 
 <main>
-  <div class="hint">پارہ یا سورت چنیں۔ ہر پارے میں کسی آیت پر <b>ایک کلک</b> سے پوری آیت روشن ہوتی ہے، <b>دو کلک</b> سے غلط لفظ نشان زد ہوتا ہے، اور <b>تین کلک</b> سے لفظ بہ لفظ ہائی لائٹ شروع ہو جاتا ہے۔ اوپر کی فہرستوں سے کسی بھی پارے یا سورت پر سیدھا جائیں۔</div>
+  <section class="hero">
+    <div class="hero-t">
+      <div class="hero-ur">مجتبیٰ آن لائن قرآن اکیڈمی</div>
+      <div class="hero-en">Mujtaba Online Quran Academy</div>
+      <div class="hero-s">لائیو آن لائن کلاسز — ناظرہ، حفظ، تجوید — <b>۳ دن مفت ٹرائل</b></div>
+    </div>
+    <div class="alinks hero-links">
+    <a class="ac fb" href="https://www.facebook.com/MujtabaOnlineQuranAcademy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg><span>Facebook</span></a>
+    <a class="ac web" href="https://moqacademy.pk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="st"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>moqacademy.pk</span></a>
+    <a class="ac web" href="https://onlinequranstudy.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="st"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>onlinequranstudy.com</span></a>
+    <a class="ac wa" href="https://wa.me/923132309729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm5.8 14c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12a14 14 0 0 1-3.2-1.5c-2.6-1.7-4.2-4.3-4.35-4.5-.12-.2-1-1.4-1-2.7 0-1.3.65-1.9.9-2.2.2-.25.5-.3.7-.3h.5c.17 0 .4-.05.6.45.25.6.8 2 .85 2.15.07.15.1.3 0 .5-.1.2-.15.3-.3.5l-.45.5c-.15.15-.3.3-.12.6.17.3.75 1.25 1.6 2 1.1 1 2 1.3 2.3 1.45.3.15.5.12.65-.07.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.27.1 1.7.8 2 .95.3.15.5.22.55.35.07.12.07.7-.18 1.4z"/></svg><span dir="ltr">+92 313 2309729</span></a>
+  </div>
+  </section>
+  <div class="hint">پارہ یا سورت چنیں۔ ہر پارے میں کسی آیت پر <b>ایک کلک</b> سے پوری آیت روشن ہوتی ہے، <b>دو کلک</b> سے غلط لفظ نشان زد ہوتا ہے، اور <b>تین کلک</b> سے لفظ بہ لفظ ہائی لائٹ شروع ہو جاتا ہے۔ صفحہ بڑا کرنے کے لیے اوپر <b>+ / −</b> زوم، اور پوری اسکرین کے لیے <b>«پٹی چھپائیں»</b> استعمال کریں۔</div>
   <h2 class="sec-title">📖 پارے (۳۰)</h2>
   <div class="grid">
 <a class="card" href="para-01.html"><span class="no">۱</span><div class="nm">الٓمّٓ</div><div class="rg">الفاتحة ۱ — البقرة ۱۴۱<br>صفحہ ۱ تا ۲۰</div></a>
@@ -68,7 +85,7 @@
   </div>
   <h2 class="sec-title">📜 سورتیں (۱۱۴)</h2>
   <input id="sfilter" type="search" placeholder="سورت کا نام یا نمبر لکھیں…" aria-label="سورت تلاش کریں">
-  <table class="stable">
+  <div class="tscroll"><table class="stable">
     <thead><tr><th>نمبر</th><th>سورت</th><th>آیات</th><th>پارہ</th><th>صفحہ</th></tr></thead>
     <tbody id="stbody">
 <tr data-q="الفاتحة 1"><td>۱</td><td class="sn"><a href="para-01.html#s1">الفاتحة</a></td><td>۷</td><td><a href="para-01.html#s1">پارہ ۱</a></td><td>۲</td></tr>
@@ -186,13 +203,21 @@
 <tr data-q="الفلق 113"><td>۱۱۳</td><td class="sn"><a href="para-30.html#s113">الفلق</a></td><td>۵</td><td><a href="para-30.html#s113">پارہ ۳۰</a></td><td>۵۴۹</td></tr>
 <tr data-q="الناس 114"><td>۱۱۴</td><td class="sn"><a href="para-30.html#s114">الناس</a></td><td>۶</td><td><a href="para-30.html#s114">پارہ ۳۰</a></td><td>۵۴۹</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </main>
 
-<footer>
-  استاد: محمد راشد — لائیو آن لائن کلاسز — بچے اور بڑے، دنیا بھر سے<br>
-  <b>3 دن مفت ٹرائل</b> — WhatsApp: <a class="wa" href="https://wa.me/923132309729" target="_blank" rel="noopener">0313 2309729</a> —
-  <a href="https://www.moqacademy.pk" target="_blank" rel="noopener">🌐 Website: www.moqacademy.pk</a>
+<footer class="site-foot">
+  <div class="fbrand">
+    <img src="assets/logo.jpg" alt="" width="54" height="54">
+    <div><div class="fur">مجتبیٰ آن لائن قرآن اکیڈمی</div><div class="fen">Mujtaba Online Quran Academy</div></div>
+  </div>
+  <div class="alinks ">
+    <a class="ac fb" href="https://www.facebook.com/MujtabaOnlineQuranAcademy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg><span>Facebook</span></a>
+    <a class="ac web" href="https://moqacademy.pk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="st"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>moqacademy.pk</span></a>
+    <a class="ac web" href="https://onlinequranstudy.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="st"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>onlinequranstudy.com</span></a>
+    <a class="ac wa" href="https://wa.me/923132309729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2zm5.8 14c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12a14 14 0 0 1-3.2-1.5c-2.6-1.7-4.2-4.3-4.35-4.5-.12-.2-1-1.4-1-2.7 0-1.3.65-1.9.9-2.2.2-.25.5-.3.7-.3h.5c.17 0 .4-.05.6.45.25.6.8 2 .85 2.15.07.15.1.3 0 .5-.1.2-.15.3-.3.5l-.45.5c-.15.15-.3.3-.12.6.17.3.75 1.25 1.6 2 1.1 1 2 1.3 2.3 1.45.3.15.5.12.65-.07.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.27.1 1.7.8 2 .95.3.15.5.22.55.35.07.12.07.7-.18 1.4z"/></svg><span dir="ltr">+92 313 2309729</span></a>
+  </div>
+  <div class="fnote">استاد: محمد راشد — لائیو آن لائن کلاسز — بچے اور بڑے، دنیا بھر سے — <b>۳ دن مفت ٹرائل</b></div>
 </footer>
 <script src="assets/data.js"></script>
 <script src="assets/nav.js"></script>

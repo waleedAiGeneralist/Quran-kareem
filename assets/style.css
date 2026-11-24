@@ -1,44 +1,90 @@
-/* قرآنِ حکیم — مشترکہ اسٹائل (اصل نمونہ: پارہ ۳) */
+/* قرآنِ حکیم — مشترکہ اسٹائل (v2: مختصر ہیڈر، زوم، پٹی چھپائیں، اکیڈمی لنکس) */
   :root{
     --navy:#16264e; --navy-deep:#101d3d; --navy-soft:#2c447c;
     --gold:#e9c766; --gold-deep:#c9a227;
     --page-bg:#e9edf6; --ink:#1c2438; --foot:#44548a;
-    --hdr:120px;
+    --hdr:150px;
+    --f-ui:"Poppins","Noto Naskh Arabic","Segoe UI",Tahoma,Arial,sans-serif;     /* بٹن، فہرستیں */
+    --f-ur:"Poppins","Noto Nastaliq Urdu","Noto Naskh Arabic","Segoe UI",Tahoma,serif; /* اردو عبارت */
+    --f-ar:"Noto Naskh Arabic","Amiri","Traditional Arabic",serif;              /* قرآنی نام */
+    --f-lat:"Poppins","Segoe UI",Arial,sans-serif;
+    --bh:38px;   /* بٹن کی اونچائی */
   }
   *{ box-sizing:border-box; }
-  html{ scroll-padding-top:calc(var(--hdr) + 8px); }
-  body{ margin:0; background:var(--page-bg); color:var(--ink);
-        font-family:"Noto Naskh Arabic","Noto Nastaliq Urdu","Segoe UI",Tahoma,Arial,sans-serif;
-        -webkit-text-size-adjust:100%; }
+  html{ scroll-padding-top:calc(var(--hdr) + 6px); }
+  body{ margin:0; background:var(--page-bg); color:var(--ink); font-family:var(--f-ui);
+        -webkit-text-size-adjust:100%; overflow-x:hidden; }
+  button, select, input{ font-family:var(--f-ui); }
 
   /* ===== ہیڈر ===== */
   header{ position:sticky; top:0; z-index:30; color:#fff;
           background:linear-gradient(180deg,var(--navy),var(--navy-deep));
           box-shadow:0 2px 10px rgba(0,0,0,.28); padding-top:env(safe-area-inset-top,0px); }
-  .h1row{ display:flex; align-items:center; gap:10px; padding:8px 12px 4px; }
-  .h1row img{ width:42px; height:42px; border-radius:50%; border:2px solid var(--gold); background:#fff; flex:none; }
-  h1{ margin:0; font-size:21px; line-height:1.25; font-weight:700; }
+  .hdr-off header{ display:none; }
+  .h1row{ display:flex; align-items:center; gap:9px; padding:5px 10px 3px; max-width:1180px; margin:0 auto; }
+  .h1row .logo{ flex:none; display:block; line-height:0; }
+  .h1row img{ width:38px; height:38px; border-radius:50%; border:2px solid var(--gold); background:#fff; }
+  .titles{ display:flex; flex-direction:column; min-width:0; flex:1 1 auto; }
+  h1{ margin:0; font-family:var(--f-ur); font-size:18px; line-height:1.75; font-weight:700;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  h1 .pname{ font-family:var(--f-ar); font-weight:600; font-size:.95em; color:#dfe6fb; }
   .gold{ color:var(--gold); }
-  .brand{ font-size:12.5px; color:#c9d2ee; }
-  .titles{ display:flex; flex-direction:column; min-width:0; }
-  .wa-chip{ margin-inline-start:auto; flex:none; display:inline-flex; align-items:center; gap:6px;
-            background:#25d366; color:#06361a; text-decoration:none; font-weight:700; font-size:13px;
-            padding:6px 11px; border-radius:999px; direction:ltr; }
-  .wa-chip svg{ width:16px; height:16px; fill:#06361a; }
+  .brand{ font-family:var(--f-ur); font-size:11.5px; line-height:1.6; color:#c9d2ee; margin-top:-4px;
+          white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hact{ display:flex; align-items:center; gap:6px; flex:none; }
+  .wa-chip{ display:inline-flex; align-items:center; gap:6px; height:34px;
+            background:#25d366; color:#06361a; text-decoration:none; font-family:var(--f-lat); font-weight:600; font-size:13px;
+            padding:0 11px; border-radius:999px; direction:ltr; }
+  .wa-chip svg{ width:17px; height:17px; fill:#06361a; flex:none; }
+  .hbtn{ display:inline-flex; align-items:center; gap:4px; height:34px; padding:0 10px; border-radius:999px; cursor:pointer;
+         background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(233,199,102,.6); font-size:13px; font-weight:600; }
+  .hbtn:hover{ background:rgba(255,255,255,.2); }
+  .hbtn svg{ width:18px; height:18px; fill:currentColor; flex:none; }
 
-  .toolbar{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:4px 10px 9px; }
+  /* پٹی دکھائیں: چھوٹا تیرتا بٹن */
+  .hdr-show{ display:none; position:fixed; z-index:35; bottom:calc(14px + env(safe-area-inset-bottom,0px)); left:12px;
+             align-items:center; gap:4px; height:36px; padding:0 12px 0 9px; border-radius:999px; cursor:pointer;
+             background:rgba(16,29,61,.82); color:#fff; border:1px solid var(--gold-deep); font-size:13px; font-weight:600;
+             box-shadow:0 3px 10px rgba(0,0,0,.3); opacity:.88; -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); }
+  .hdr-show:hover, .hdr-show:focus-visible{ opacity:1; }
+  .hdr-show svg{ width:18px; height:18px; fill:var(--gold); }
+  .hdr-off .hdr-show{ display:inline-flex; }
+
+  /* پارہ / سورت */
+  .navrow{ display:flex; align-items:center; gap:6px; padding:3px 10px 4px; max-width:1180px; margin:0 auto; }
+  .navrow a.nb, .navrow select{
+    font-size:14px; color:var(--navy-deep); background:var(--gold); text-decoration:none;
+    border:1px solid var(--gold-deep); border-radius:10px; padding:0 11px; height:var(--bh); cursor:pointer;
+    display:inline-flex; align-items:center; gap:4px; flex:none; white-space:nowrap; }
+  .navrow a.nb:hover{ background:#f3d77f; }
+  .navrow a.nb.off{ opacity:.35; pointer-events:none; }
+  .navrow select{ background:#fffdf6; flex:1 1 0; min-width:0; max-width:300px; font-weight:500; padding:0 8px; }
+  select option{ color:#111; background:#fff; font-family:var(--f-ar); font-size:15px; }
+
+  /* اوزار */
+  .toolbar{ display:flex; align-items:center; gap:6px; padding:3px 10px 4px; max-width:1180px; margin:0 auto; }
+  .tools{ display:flex; gap:5px; flex:none; }
   .toolbar button, .toolbar select{
-    font:inherit; font-size:14px; color:#fff; background:var(--navy-soft);
-    border:1px solid rgba(233,199,102,.55); border-radius:10px; padding:6px 11px; min-height:36px; cursor:pointer; }
-  .toolbar button:hover{ background:#3a5799; }
-  .toolbar button:disabled{ opacity:.4; cursor:default; }
+    font-size:14px; color:#fff; background:var(--navy-soft); height:var(--bh);
+    border:1px solid rgba(233,199,102,.55); border-radius:10px; padding:0 10px; cursor:pointer; }
+  .tools button{ display:inline-flex; align-items:center; justify-content:center; gap:5px; white-space:nowrap; }
+  .tools .i{ font-size:14px; line-height:1; }
+  .tools .l{ line-height:1.2; }
+  .toolbar button:hover:not(:disabled){ background:#3a5799; }
+  .toolbar button:disabled{ opacity:.42; cursor:default; }
   .toolbar button.sel, .toolbar button.on{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold-deep); }
-  #bBad{ background:#a82020; } #bBad:hover{ background:#c62828; }
-  #bOk{ background:#1e7a3a; }  #bOk:hover{ background:#2a9a4c; }
-  .toolbar select{ max-width:130px; }
-  .toolbar option{ color:#111; }
-  #status{ flex:1 1 200px; min-width:0; font-size:14.5px; font-weight:700; color:#fff; text-align:start; padding:0 4px; line-height:1.5; }
-  #status small{ display:block; font-weight:400; font-size:12.5px; color:var(--gold); }
+  #bBad{ background:#a82020; } #bBad:hover:not(:disabled){ background:#c62828; }
+  #bOk{ background:#1e7a3a; }  #bOk:hover:not(:disabled){ background:#2a9a4c; }
+  .pgz{ display:flex; align-items:center; gap:6px; flex:1 1 auto; justify-content:flex-end; min-width:0; }
+  #pgsel{ min-width:0; width:120px; flex:0 1 120px; padding:0 6px; }
+  .zoom{ display:inline-flex; flex:none; border:1px solid var(--gold-deep); border-radius:10px; overflow:hidden; direction:ltr; }
+  .zoom button{ border:0; border-radius:0; height:calc(var(--bh) - 2px); min-width:38px; padding:0 8px; font-size:19px; font-weight:600; background:var(--navy-soft); }
+  .zoom #zReset{ min-width:58px; font-size:13.5px; background:#fffdf6; color:var(--navy-deep); }
+  .zoom #zReset:hover{ background:#fff3c7; }
+  #status{ max-width:1180px; margin:0 auto; padding:0 12px 5px; font-size:13.5px; font-weight:700; color:#fff; line-height:1.55;
+           white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #status small{ font-weight:400; font-size:12.5px; color:var(--gold); }
+  #status small::before{ content:" — "; color:#8fa0cf; }
 
   /* ===== رنگ و ترتیب کا پینل ===== */
   #cpanel{ position:absolute; top:100%; inset-inline:0; background:#fffdf6; color:var(--ink);
@@ -55,14 +101,25 @@
   .cset label{ display:inline-flex; align-items:center; gap:6px; }
   .cset input[type=range]{ width:100px; accent-color:var(--gold-deep); }
   .cfoot{ display:flex; gap:8px; align-items:center; margin-top:8px; flex-wrap:wrap; }
-  .cfoot button{ font:inherit; font-size:13px; padding:5px 12px; border-radius:9px; border:1px solid var(--gold-deep); background:#fff7da; color:var(--navy); cursor:pointer; }
+  .cfoot button{ font-size:13px; padding:5px 12px; border-radius:9px; border:1px solid var(--gold-deep); background:#fff7da; color:var(--navy); cursor:pointer; }
   .cfoot span{ font-size:12.5px; color:#5a6d9e; }
 
   /* ===== صفحات ===== */
-  main{ max-width:920px; margin:0 auto; padding:10px 8px 18px; }
-  .hint{ background:#fffdf6; border:1px solid #e6d9a8; border-radius:12px; padding:9px 13px; margin:2px 0 12px;
-         font-size:14.5px; line-height:1.9; color:#3d4f7d; }
-  .pg{ position:relative; width:100%; margin:0 0 14px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 7px rgba(20,30,70,.2); }
+  main{ max-width:920px; margin:0 auto; padding:10px 8px 16px; }
+  body.zoomed main{ max-width:none; }
+  .hint{ max-width:904px; margin:0 auto 10px; background:#fffdf6; border:1px solid #e6d9a8; border-radius:12px; padding:6px 13px;
+         font-family:var(--f-ur); font-size:13.5px; line-height:2.15; color:#3d4f7d; }
+  #wrap{ overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
+  .pgb{ width:var(--pw,100%); margin:0 auto; background:#fff; }
+  #wrap{ border-radius:12px; box-shadow:0 1px 7px rgba(20,30,70,.2); background:#fff; }
+  body.zoomed #wrap{ border-radius:0; }
+  .plinks{ position:sticky; right:0; width:min(100%, var(--ww,100%)); display:flex; align-items:center; justify-content:space-between; gap:8px; direction:ltr;
+           padding:3px 10px; background:linear-gradient(180deg,#f4f6fc,#e8ecf7); border-bottom:1px solid #d5dbec;
+           font-family:var(--f-lat); font-size:12px; line-height:1.5; }
+  .plinks a{ color:#1d3a8a; text-decoration:none; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+  .plinks a:hover{ text-decoration:underline; }
+  .plinks .pno{ flex:none; direction:rtl; font-family:var(--f-ui); font-size:12px; color:#fff; background:var(--navy); border-radius:7px; padding:0 8px; }
+  .pg{ position:relative; width:100%; background:#fff; }
   .pg img{ display:block; width:100%; height:auto; user-select:none; -webkit-user-select:none; -webkit-user-drag:none; }
   .pg svg{ position:absolute; left:0; top:0; width:100%; height:100%; }
   .hit{ fill:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
@@ -71,66 +128,111 @@
   @keyframes pulse{ 0%,100%{opacity:.95} 50%{opacity:.55} }
   .shake{ animation:shake .35s; }
   @keyframes shake{ 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
-  #toast{ position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#101d3d; color:#fff; padding:9px 16px;
+  #toast{ position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#101d3d; color:#fff; padding:8px 16px;
           border-radius:10px; font-size:14px; opacity:0; pointer-events:none; transition:opacity .25s; z-index:40; max-width:90vw; text-align:center; border:1px solid var(--gold-deep); }
   #toast.show{ opacity:.97; }
 
-  footer{ max-width:920px; margin:0 auto; padding:14px 14px 34px; text-align:center; color:var(--foot); font-size:14.5px; line-height:2; }
-  footer b{ color:var(--navy); }
-  footer a{ color:var(--navy); font-weight:700; }
-  footer a.wa{ direction:ltr; unicode-bidi:isolate; }
-
-  @media (max-width:520px){
-    h1{ font-size:18px; } .brand{ font-size:11.5px; }
-    .toolbar button, .toolbar select{ font-size:13px; padding:5px 9px; }
-    .hint{ font-size:13.5px; }
-  }
-
-  /* ===== نیویگیشن (پارہ / سورت) — نیا اضافہ ===== */
-  .navrow{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:2px 10px 6px; }
-  .navrow a.nb, .navrow select{
-    font:inherit; font-size:14px; color:var(--navy-deep); background:var(--gold); text-decoration:none;
-    border:1px solid var(--gold-deep); border-radius:10px; padding:6px 11px; min-height:36px; cursor:pointer;
-    display:inline-flex; align-items:center; gap:4px; }
-  .navrow a.nb:hover{ background:#f3d77f; }
-  .navrow a.nb.off{ opacity:.35; pointer-events:none; }
-  .navrow select{ background:#fffdf6; max-width:190px; }
-  .navrow option{ color:#111; }
-  .pg .plabel{ position:absolute; top:6px; inset-inline-start:8px; z-index:2; font-size:12px; color:#fff; background:rgba(16,29,61,.72);
-               border-radius:8px; padding:1px 8px; pointer-events:none; }
-  .pager{ display:flex; justify-content:space-between; gap:10px; max-width:920px; margin:4px auto 0; padding:0 8px; }
-  .pager a{ flex:1; text-align:center; background:var(--navy); color:#fff; text-decoration:none; border-radius:12px; padding:12px 10px;
+  .pager{ display:flex; justify-content:space-between; gap:10px; max-width:920px; margin:2px auto 0; padding:0 8px; }
+  .pager a{ flex:1; text-align:center; background:var(--navy); color:#fff; text-decoration:none; border-radius:12px; padding:11px 10px;
             font-size:16px; border:1px solid var(--gold-deep); }
   .pager a:hover{ background:var(--navy-soft); }
   .pager a.off{ visibility:hidden; }
 
+  /* ===== اکیڈمی کے لنکس اور فوٹر ===== */
+  .alinks{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+  .alinks .ac{ display:inline-flex; align-items:center; gap:6px; height:36px; padding:0 13px; border-radius:999px; text-decoration:none;
+               font-family:var(--f-lat); font-size:13px; font-weight:500; color:var(--navy); background:#fff; border:1px solid #cfd6ea; direction:ltr; }
+  .alinks .ac:hover{ border-color:var(--gold-deep); background:#fffbea; }
+  .alinks svg{ width:17px; height:17px; flex:none; fill:currentColor; }
+  .alinks svg.st{ fill:none; stroke:currentColor; stroke-width:1.8; }
+  .alinks .fb{ color:#1565c0; } .alinks .wa{ color:#128c4a; }
+  footer.site-foot{ max-width:920px; margin:18px auto 0; padding:18px 14px calc(30px + env(safe-area-inset-bottom,0px)); text-align:center; color:var(--foot);
+                    border-top:2px solid var(--gold-deep); }
+  .fbrand{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:12px; }
+  .fbrand img{ width:54px; height:54px; border-radius:50%; border:2px solid var(--gold-deep); background:#fff; }
+  .fbrand > div{ text-align:start; }
+  .fur{ font-family:var(--f-ur); font-size:19px; font-weight:700; color:var(--navy); line-height:1.9; }
+  .fen{ font-family:var(--f-lat); font-size:13px; font-weight:600; color:#8a6d12; letter-spacing:.3px; direction:ltr; text-align:end; }
+  .fnote{ font-family:var(--f-ur); font-size:13.5px; line-height:2.3; margin-top:10px; }
+  .fnote b{ color:var(--navy); }
+
   /* ===== فہرست کا صفحہ ===== */
-  .sec-title{ font-size:19px; color:var(--navy); margin:18px 4px 10px; border-bottom:2px solid var(--gold-deep); padding-bottom:4px; }
+  .hero{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 16px; margin:2px 0 12px; padding:12px 16px;
+         border-radius:14px; background:linear-gradient(135deg,#fffdf6,#f6efd6); border:1px solid #e6d9a8; }
+  .hero-ur{ font-family:var(--f-ur); font-size:20px; font-weight:700; color:var(--navy); line-height:1.9; }
+  .hero-en{ font-family:var(--f-lat); font-size:13px; font-weight:600; color:#8a6d12; direction:ltr; text-align:end; }
+  .hero-s{ font-family:var(--f-ur); font-size:13px; color:#3d4f7d; line-height:2.2; }
+  .hero-links{ justify-content:flex-start; }
+  .sec-title{ font-family:var(--f-ur); font-size:19px; line-height:2; color:var(--navy); margin:16px 4px 10px; border-bottom:2px solid var(--gold-deep); padding-bottom:2px; }
   .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:10px; }
   .card{ display:block; background:#fff; border-radius:12px; box-shadow:0 1px 7px rgba(20,30,70,.18); padding:10px 12px; text-decoration:none; color:var(--ink);
          border-top:4px solid var(--gold-deep); transition:transform .12s, box-shadow .12s; }
   .card:hover{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(20,30,70,.25); }
   .card .no{ display:inline-block; min-width:30px; text-align:center; background:var(--navy); color:var(--gold); border-radius:8px; padding:0 6px; font-weight:700; }
-  .card .nm{ font-family:"Noto Naskh Arabic","Amiri","Traditional Arabic",serif; font-size:21px; color:var(--navy); margin:6px 0 2px; line-height:1.7; }
+  .card .nm{ font-family:var(--f-ar); font-size:21px; color:var(--navy); margin:6px 0 2px; line-height:1.7; }
   .card .rg{ font-size:12.5px; color:#5a6d9e; line-height:1.8; }
-  .stable{ width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 7px rgba(20,30,70,.18); }
+  .tscroll{ overflow-x:auto; border-radius:12px; box-shadow:0 1px 7px rgba(20,30,70,.18); }
+  .stable{ width:100%; border-collapse:collapse; background:#fff; }
   .stable th{ background:var(--navy); color:var(--gold); font-weight:700; padding:7px 6px; font-size:14px; }
   .stable td{ padding:6px; border-bottom:1px solid #eef0f6; text-align:center; font-size:14.5px; }
   .stable tr:nth-child(even) td{ background:#f7f8fc; }
-  .stable td.sn{ font-family:"Noto Naskh Arabic","Amiri",serif; font-size:18px; text-align:start; }
+  .stable td.sn{ font-family:var(--f-ar); font-size:18px; text-align:start; }
   .stable a{ color:var(--navy); font-weight:700; text-decoration:none; }
   .stable a:hover{ text-decoration:underline; }
-  #sfilter{ font:inherit; font-size:15px; width:100%; max-width:340px; padding:7px 12px; border-radius:10px; border:1px solid #c9b46a; margin:0 0 10px; }
-  @media (max-width:520px){
-    .navrow a.nb, .navrow select{ font-size:13px; padding:5px 8px; }
-    .navrow select{ max-width:140px; }
-    .grid{ grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); }
+  #sfilter{ font-size:15px; width:100%; max-width:340px; padding:7px 12px; border-radius:10px; border:1px solid #c9b46a; margin:0 0 10px; }
+
+  /* ===== بڑی اسکرین: ہیڈر صرف دو قطاروں میں ===== */
+  @media (min-width:1101px){
+    header{ display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center;
+            padding-inline:max(0px, calc((100% - 1180px) / 2)); }
+    .h1row{ grid-column:1; margin:0; padding-inline-end:4px; }
+    .navrow{ grid-column:2; margin:0; padding-top:5px; }
+    .navrow select{ max-width:240px; }
+    .toolbar, #status{ grid-column:1 / -1; margin:0; width:100%; max-width:none; }
+    .toolbar{ padding-top:1px; }
   }
-  @media (max-width:520px){
+  /* ===== درمیانی اسکرین: اوزار دو حصوں میں ===== */
+  @media (max-width:900px){
+    .toolbar{ flex-wrap:wrap; row-gap:5px; }
+    .tools{ flex:1 1 100%; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); }
+    .tools button{ padding:0 4px; }
+    .pgz{ flex:1 1 100%; justify-content:space-between; }
+    #pgsel{ flex:1 1 auto; width:auto; max-width:none; }
+  }
+  /* ===== موبائل ===== */
+  @media (max-width:600px){
+    :root{ --bh:36px; }
+    h1{ font-size:16px; } .brand{ font-size:10.5px; }
     h1 .pname{ display:none; }
-    .navrow{ flex-wrap:nowrap; padding:2px 8px 6px; }
+    .h1row{ padding:4px 8px 2px; gap:7px; }
+    .h1row img{ width:34px; height:34px; }
+    .wa-chip{ width:34px; padding:0; justify-content:center; }
+    .wa-chip .t{ display:none; }
+    .hbtn{ padding:0 9px; font-size:12px; }
+    .navrow, .toolbar{ padding-inline:8px; gap:5px; }
+    .navrow a.nb{ padding:0 10px; }
     .navrow a.nb .t{ display:none; }
-    .navrow select{ flex:1 1 0; min-width:0; max-width:none; }
-    .wa-chip{ padding:5px 9px; font-size:12px; }
+    .navrow select{ font-size:13px; padding:0 4px; max-width:none; }
+    .tools{ gap:4px; }
+    .tools button{ flex-direction:column; gap:0; padding:0 2px; height:42px; }
+    .tools .i{ font-size:13px; } .tools .l{ font-size:11px; }
+    .toolbar select{ font-size:13px; }
+    #status{ font-size:12.5px; padding:0 10px 4px; }
+    #status small{ font-size:11.5px; }
+    .hint{ font-size:12.5px; line-height:2; padding:4px 10px; }
+    main{ padding:8px 6px 14px; }
+    .grid{ grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); }
+    .plinks{ font-size:10.5px; padding:2px 7px; gap:5px; }
+    .plinks .pno{ font-size:11px; padding:0 6px; }
+    .hero{ padding:10px 12px; } .hero-links{ justify-content:center; }
+    .alinks .ac{ font-size:12.5px; padding:0 11px; }
+    .pager a{ font-size:15px; padding:10px 6px; }
   }
-  @media print{ header, .hint, .pager, footer{ display:none; } .pg{ box-shadow:none; break-inside:avoid; } }
+  @media (max-width:385px){
+    .plinks{ font-size:10px; padding:2px 6px; }
+    .plinks .pno{ display:none; }
+  }
+  @media (max-width:370px){
+    .hbtn .t{ display:none; }
+  }
+  @media print{ header, .hint, .pager, footer, .hdr-show, .plinks{ display:none !important; } .pgb{ width:100% !important; break-inside:avoid; } }
