@@ -1,0 +1,136 @@
+/* قرآنِ حکیم — مشترکہ اسٹائل (اصل نمونہ: پارہ ۳) */
+  :root{
+    --navy:#16264e; --navy-deep:#101d3d; --navy-soft:#2c447c;
+    --gold:#e9c766; --gold-deep:#c9a227;
+    --page-bg:#e9edf6; --ink:#1c2438; --foot:#44548a;
+    --hdr:120px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-padding-top:calc(var(--hdr) + 8px); }
+  body{ margin:0; background:var(--page-bg); color:var(--ink);
+        font-family:"Noto Naskh Arabic","Noto Nastaliq Urdu","Segoe UI",Tahoma,Arial,sans-serif;
+        -webkit-text-size-adjust:100%; }
+
+  /* ===== ہیڈر ===== */
+  header{ position:sticky; top:0; z-index:30; color:#fff;
+          background:linear-gradient(180deg,var(--navy),var(--navy-deep));
+          box-shadow:0 2px 10px rgba(0,0,0,.28); padding-top:env(safe-area-inset-top,0px); }
+  .h1row{ display:flex; align-items:center; gap:10px; padding:8px 12px 4px; }
+  .h1row img{ width:42px; height:42px; border-radius:50%; border:2px solid var(--gold); background:#fff; flex:none; }
+  h1{ margin:0; font-size:21px; line-height:1.25; font-weight:700; }
+  .gold{ color:var(--gold); }
+  .brand{ font-size:12.5px; color:#c9d2ee; }
+  .titles{ display:flex; flex-direction:column; min-width:0; }
+  .wa-chip{ margin-inline-start:auto; flex:none; display:inline-flex; align-items:center; gap:6px;
+            background:#25d366; color:#06361a; text-decoration:none; font-weight:700; font-size:13px;
+            padding:6px 11px; border-radius:999px; direction:ltr; }
+  .wa-chip svg{ width:16px; height:16px; fill:#06361a; }
+
+  .toolbar{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:4px 10px 9px; }
+  .toolbar button, .toolbar select{
+    font:inherit; font-size:14px; color:#fff; background:var(--navy-soft);
+    border:1px solid rgba(233,199,102,.55); border-radius:10px; padding:6px 11px; min-height:36px; cursor:pointer; }
+  .toolbar button:hover{ background:#3a5799; }
+  .toolbar button:disabled{ opacity:.4; cursor:default; }
+  .toolbar button.sel, .toolbar button.on{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold-deep); }
+  #bBad{ background:#a82020; } #bBad:hover{ background:#c62828; }
+  #bOk{ background:#1e7a3a; }  #bOk:hover{ background:#2a9a4c; }
+  .toolbar select{ max-width:130px; }
+  .toolbar option{ color:#111; }
+  #status{ flex:1 1 200px; min-width:0; font-size:14.5px; font-weight:700; color:#fff; text-align:start; padding:0 4px; line-height:1.5; }
+  #status small{ display:block; font-weight:400; font-size:12.5px; color:var(--gold); }
+
+  /* ===== رنگ و ترتیب کا پینل ===== */
+  #cpanel{ position:absolute; top:100%; inset-inline:0; background:#fffdf6; color:var(--ink);
+           border-bottom:3px solid var(--gold-deep); box-shadow:0 8px 18px rgba(0,0,0,.25); padding:10px 14px 12px;
+           max-height:calc(100vh - var(--hdr) - 10px); overflow:auto; }
+  #cpanel[hidden]{ display:none; }
+  .crow{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:6px 0; }
+  .clabel{ font-size:14px; font-weight:700; min-width:140px; color:var(--navy); }
+  .sw{ width:34px; height:34px; border-radius:50%; border:2px solid #7d8aa8; padding:0; cursor:pointer; position:relative; }
+  .sw.sel{ outline:3px solid var(--gold-deep); outline-offset:2px; }
+  .sw.none{ background:#fff linear-gradient(135deg,transparent 46%,#c62828 47%,#c62828 53%,transparent 54%); }
+  .sw.auto{ background:conic-gradient(#ef5350,#ffca28,#66bb6a,#42a5f5,#ab47bc,#ef5350); }
+  .cset{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:10px; padding-top:8px; border-top:1px dashed #d9c98a; font-size:14px; color:var(--navy); }
+  .cset label{ display:inline-flex; align-items:center; gap:6px; }
+  .cset input[type=range]{ width:100px; accent-color:var(--gold-deep); }
+  .cfoot{ display:flex; gap:8px; align-items:center; margin-top:8px; flex-wrap:wrap; }
+  .cfoot button{ font:inherit; font-size:13px; padding:5px 12px; border-radius:9px; border:1px solid var(--gold-deep); background:#fff7da; color:var(--navy); cursor:pointer; }
+  .cfoot span{ font-size:12.5px; color:#5a6d9e; }
+
+  /* ===== صفحات ===== */
+  main{ max-width:920px; margin:0 auto; padding:10px 8px 18px; }
+  .hint{ background:#fffdf6; border:1px solid #e6d9a8; border-radius:12px; padding:9px 13px; margin:2px 0 12px;
+         font-size:14.5px; line-height:1.9; color:#3d4f7d; }
+  .pg{ position:relative; width:100%; margin:0 0 14px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 7px rgba(20,30,70,.2); }
+  .pg img{ display:block; width:100%; height:auto; user-select:none; -webkit-user-select:none; -webkit-user-drag:none; }
+  .pg svg{ position:absolute; left:0; top:0; width:100%; height:100%; }
+  .hit{ fill:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .blend{ mix-blend-mode:multiply; pointer-events:none; }
+  .pulse{ animation:pulse 1s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:.95} 50%{opacity:.55} }
+  .shake{ animation:shake .35s; }
+  @keyframes shake{ 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+  #toast{ position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#101d3d; color:#fff; padding:9px 16px;
+          border-radius:10px; font-size:14px; opacity:0; pointer-events:none; transition:opacity .25s; z-index:40; max-width:90vw; text-align:center; border:1px solid var(--gold-deep); }
+  #toast.show{ opacity:.97; }
+
+  footer{ max-width:920px; margin:0 auto; padding:14px 14px 34px; text-align:center; color:var(--foot); font-size:14.5px; line-height:2; }
+  footer b{ color:var(--navy); }
+  footer a{ color:var(--navy); font-weight:700; }
+  footer a.wa{ direction:ltr; unicode-bidi:isolate; }
+
+  @media (max-width:520px){
+    h1{ font-size:18px; } .brand{ font-size:11.5px; }
+    .toolbar button, .toolbar select{ font-size:13px; padding:5px 9px; }
+    .hint{ font-size:13.5px; }
+  }
+
+  /* ===== نیویگیشن (پارہ / سورت) — نیا اضافہ ===== */
+  .navrow{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:2px 10px 6px; }
+  .navrow a.nb, .navrow select{
+    font:inherit; font-size:14px; color:var(--navy-deep); background:var(--gold); text-decoration:none;
+    border:1px solid var(--gold-deep); border-radius:10px; padding:6px 11px; min-height:36px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:4px; }
+  .navrow a.nb:hover{ background:#f3d77f; }
+  .navrow a.nb.off{ opacity:.35; pointer-events:none; }
+  .navrow select{ background:#fffdf6; max-width:190px; }
+  .navrow option{ color:#111; }
+  .pg .plabel{ position:absolute; top:6px; inset-inline-start:8px; z-index:2; font-size:12px; color:#fff; background:rgba(16,29,61,.72);
+               border-radius:8px; padding:1px 8px; pointer-events:none; }
+  .pager{ display:flex; justify-content:space-between; gap:10px; max-width:920px; margin:4px auto 0; padding:0 8px; }
+  .pager a{ flex:1; text-align:center; background:var(--navy); color:#fff; text-decoration:none; border-radius:12px; padding:12px 10px;
+            font-size:16px; border:1px solid var(--gold-deep); }
+  .pager a:hover{ background:var(--navy-soft); }
+  .pager a.off{ visibility:hidden; }
+
+  /* ===== فہرست کا صفحہ ===== */
+  .sec-title{ font-size:19px; color:var(--navy); margin:18px 4px 10px; border-bottom:2px solid var(--gold-deep); padding-bottom:4px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:10px; }
+  .card{ display:block; background:#fff; border-radius:12px; box-shadow:0 1px 7px rgba(20,30,70,.18); padding:10px 12px; text-decoration:none; color:var(--ink);
+         border-top:4px solid var(--gold-deep); transition:transform .12s, box-shadow .12s; }
+  .card:hover{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(20,30,70,.25); }
+  .card .no{ display:inline-block; min-width:30px; text-align:center; background:var(--navy); color:var(--gold); border-radius:8px; padding:0 6px; font-weight:700; }
+  .card .nm{ font-family:"Noto Naskh Arabic","Amiri","Traditional Arabic",serif; font-size:21px; color:var(--navy); margin:6px 0 2px; line-height:1.7; }
+  .card .rg{ font-size:12.5px; color:#5a6d9e; line-height:1.8; }
+  .stable{ width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 7px rgba(20,30,70,.18); }
+  .stable th{ background:var(--navy); color:var(--gold); font-weight:700; padding:7px 6px; font-size:14px; }
+  .stable td{ padding:6px; border-bottom:1px solid #eef0f6; text-align:center; font-size:14.5px; }
+  .stable tr:nth-child(even) td{ background:#f7f8fc; }
+  .stable td.sn{ font-family:"Noto Naskh Arabic","Amiri",serif; font-size:18px; text-align:start; }
+  .stable a{ color:var(--navy); font-weight:700; text-decoration:none; }
+  .stable a:hover{ text-decoration:underline; }
+  #sfilter{ font:inherit; font-size:15px; width:100%; max-width:340px; padding:7px 12px; border-radius:10px; border:1px solid #c9b46a; margin:0 0 10px; }
+  @media (max-width:520px){
+    .navrow a.nb, .navrow select{ font-size:13px; padding:5px 8px; }
+    .navrow select{ max-width:140px; }
+    .grid{ grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); }
+  }
+  @media (max-width:520px){
+    h1 .pname{ display:none; }
+    .navrow{ flex-wrap:nowrap; padding:2px 8px 6px; }
+    .navrow a.nb .t{ display:none; }
+    .navrow select{ flex:1 1 0; min-width:0; max-width:none; }
+    .wa-chip{ padding:5px 9px; font-size:12px; }
+  }
+  @media print{ header, .hint, .pager, footer{ display:none; } .pg{ box-shadow:none; break-inside:avoid; } }
