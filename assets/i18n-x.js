@@ -10,7 +10,7 @@ window.QK_I18N_EXTRA = {
     x_t_kalima:"چھ کلمے | مجتبیٰ آن لائن قرآن اکیڈمی", x_t_wudu:"نماز و وضو | مجتبیٰ آن لائن قرآن اکیڈمی", x_t_hadith:"احادیث | مجتبیٰ آن لائن قرآن اکیڈمی",
     x_t_chalis:"چالیس احادیث | مجتبیٰ آن لائن قرآن اکیڈمی", x_t_duas:"روزمرہ کی دعائیں | مجتبیٰ آن لائن قرآن اکیڈمی", x_t_rabbana:"ربنا دعائیں | مجتبیٰ آن لائن قرآن اکیڈمی",
     x_asma_intro:"اللہ تعالیٰ کے ننانوے (۹۹) خوبصورت نام — عربی، تلفظ اور انگریزی معنی کے ساتھ۔ نیچے اکیڈمی کے اصل پوسٹر بھی موجود ہیں۔",
-    x_nabi_intro:"نبی کریم ﷺ کے ۲۰۱ مبارک نام (دلائل الخیرات) — عربی، تلفظ اور انگریزی معنی کے ساتھ۔ نیچے اصل ماخذ کے صفحات اور اکیڈمی کے پوسٹر بھی موجود ہیں۔",
+    x_nabi_intro:"نبی کریم ﷺ کے ۲۰۱ مبارک نام (دلائل الخیرات) — عربی، تلفظ اور انگریزی معنی کے ساتھ۔ نیچے اکیڈمی کے اصل پوسٹر بھی موجود ہیں۔",
     x_kalima_intro:"اسلام کے چھ کلمے — عربی متن اور انگریزی ترجمہ۔ ہر کلمے کے نیچے اکیڈمی کا اصل پوسٹر بھی دیکھا جا سکتا ہے۔",
     x_wudu_intro:"نماز و وضو — نیچے دیے گئے ذیلی سیکشنز میں سے انتخاب کریں: وضو، اذان، نماز کا طریقہ، نماز کا مکمل متن، دعائیں، نمازِ جنازہ وغیرہ (اکیڈمی کی کتاب اور سلائیڈز)۔",
     x_hadith_intro:"ساٹھ (۶۰) احادیثِ مبارکہ — عربی متن، اردو ترجمہ اور حوالہ کے ساتھ (اکیڈمی کے اصل صفحات)۔",
@@ -69,7 +69,16 @@ window.QK_I18N_EXTRA = {
     x_nm_duas_intro:"نماز کے بعد کی دعائیں اور اذکار، آیت الکرسی، دعائے قنوت، تسبیحِ تراویح اور فجر کے بعد کے اذکار (کتاب کے صفحات)۔",
     x_nm_janaza_intro:"نمازِ جنازہ کا طریقہ — نیت، چاروں تکبیریں، ثناء، درود اور بالغ، نابالغ لڑکے اور لڑکی کی دعائیں (کتاب کے صفحات)۔",
     x_nm_iman_intro:"ایمانِ مفصل، ایمانِ مجمل اور چھ کلمے — کتاب «نماز» کے صفحات۔",
-    x_nm_roza_intro:"روزہ رکھنے کی نیت اور روزہ کھولنے (افطار) کی دعا — کتاب کا صفحہ۔"
+    x_nm_roza_intro:"روزہ رکھنے کی نیت اور روزہ کھولنے (افطار) کی دعا — کتاب کا صفحہ۔",
+    x_hl_group:"ہائی لائٹر",
+    x_hl_1:"ایک لفظ ہائی لائٹ",
+    x_hl_2:"دو الفاظ ہائی لائٹ",
+    x_hl_prev:"پچھلا",
+    x_hl_next:"اگلا",
+    x_hl_clear:"ہائی لائٹ صاف کریں",
+    x_hl_tip:"کسی لفظ پر ٹیپ کریں — وہ ہائی لائٹ ہو جائے گا۔ نیچے ۱ / ۲ سے ایک یا دو الفاظ چنیں اور اگلا / پچھلا سے آگے پیچھے جائیں۔",
+    sel_para:"پارہ چنیں",
+    sel_surah:"سورت چنیں"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -81,7 +90,7 @@ window.QK_I18N_EXTRA = {
     x_t_kalima:"الكلمات الست | أكاديمية مجتبى للقرآن", x_t_wudu:"الصلاة والوضوء | أكاديمية مجتبى للقرآن", x_t_hadith:"الأحاديث | أكاديمية مجتبى للقرآن",
     x_t_chalis:"الأربعون حديثًا | أكاديمية مجتبى للقرآن", x_t_duas:"الأدعية اليومية | أكاديمية مجتبى للقرآن", x_t_rabbana:"أدعية ربنا | أكاديمية مجتبى للقرآن",
     x_asma_intro:"أسماء الله الحسنى التسعة والتسعون — بالعربية مع النطق والمعنى بالإنجليزية. وفي الأسفل الملصقات الأصلية للأكاديمية.",
-    x_nabi_intro:"٢٠١ من أسماء النبي ﷺ (دلائل الخيرات) — بالعربية مع النطق والمعنى بالإنجليزية. وفي الأسفل صفحات المصدر الأصلي وملصقات الأكاديمية.",
+    x_nabi_intro:"٢٠١ من أسماء النبي ﷺ (دلائل الخيرات) — بالعربية مع النطق والمعنى بالإنجليزية. وفي الأسفل ملصقات الأكاديمية الأصلية.",
     x_kalima_intro:"الكلمات الست — النص العربي مع الترجمة الإنجليزية. ويمكن عرض الملصق الأصلي للأكاديمية تحت كل كلمة.",
     x_wudu_intro:"الصلاة والوضوء — اختر قسمًا فرعيًا: الوضوء، الأذان، صفة الصلاة، نص الصلاة كاملًا، الأدعية، صلاة الجنازة وغيرها (من كتاب الأكاديمية وشرائحها).",
     x_hadith_intro:"ستون حديثًا شريفًا — النص العربي مع الترجمة الأردية والمصدر (الصفحات الأصلية للأكاديمية).",
@@ -140,7 +149,16 @@ window.QK_I18N_EXTRA = {
     x_nm_roza:"نية الصوم",
     x_s_nm_roza:"نية الصوم ودعاء الإفطار",
     x_t_nm_roza:"نية الصوم | أكاديمية مجتبى للقرآن عبر الإنترنت",
-    x_nm_roza_intro:"نية الصوم ودعاء الإفطار — صفحة الكتاب."
+    x_nm_roza_intro:"نية الصوم ودعاء الإفطار — صفحة الكتاب.",
+    x_hl_group:"أداة التظليل",
+    x_hl_1:"تظليل كلمة واحدة",
+    x_hl_2:"تظليل كلمتين",
+    x_hl_prev:"السابق",
+    x_hl_next:"التالي",
+    x_hl_clear:"مسح التظليل",
+    x_hl_tip:"اضغط على أي كلمة لتظليلها. اختر ١ / ٢ في الأسفل لتظليل كلمة أو كلمتين، وتنقّل بالتالي / السابق.",
+    sel_para:"اختر الجزء",
+    sel_surah:"اختر السورة"
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -152,7 +170,7 @@ window.QK_I18N_EXTRA = {
     x_t_kalima:"Six Kalimas | Mujtaba Online Quran Academy", x_t_wudu:"Namaz & Wudu | Mujtaba Online Quran Academy", x_t_hadith:"Hadith | Mujtaba Online Quran Academy",
     x_t_chalis:"Chalis Ahadith | Mujtaba Online Quran Academy", x_t_duas:"Daily Duas | Mujtaba Online Quran Academy", x_t_rabbana:"Rabbana Duas | Mujtaba Online Quran Academy",
     x_asma_intro:"The 99 beautiful Names of Allah — Arabic, transliteration and English meaning. The academy's original posters are below.",
-    x_nabi_intro:"201 blessed names of the Prophet ﷺ (Dalā’il-ul-Khayrāt) — Arabic with transliteration and English meaning. The original source pages and the academy's posters are below.",
+    x_nabi_intro:"201 blessed names of the Prophet ﷺ (Dalā’il-ul-Khayrāt) — Arabic with transliteration and English meaning. The academy's original posters are below.",
     x_kalima_intro:"The Six Kalimas — Arabic text with English translation. The academy's original poster can be opened under each Kalma.",
     x_wudu_intro:"Namaz & Wudu — choose a subsection below: Wudu, Azan, method of Namaz, full Namaz text, duas, Janaza prayer and more (from the academy's book and slides).",
     x_hadith_intro:"Sixty Ahadith — Arabic text, Urdu translation and reference (the academy's original pages).",
@@ -211,6 +229,15 @@ window.QK_I18N_EXTRA = {
     x_nm_roza:"Niyyat of Roza",
     x_s_nm_roza:"Sehri niyyat & Iftar dua",
     x_t_nm_roza:"Niyyat of Roza | Mujtaba Online Quran Academy",
-    x_nm_roza_intro:"The niyyat for keeping a fast and the dua for opening it (Iftar) — book page."
+    x_nm_roza_intro:"The niyyat for keeping a fast and the dua for opening it (Iftar) — book page.",
+    x_hl_group:"Highlighter",
+    x_hl_1:"Highlight 1 word",
+    x_hl_2:"Highlight 2 words",
+    x_hl_prev:"Previous",
+    x_hl_next:"Next",
+    x_hl_clear:"Clear highlight",
+    x_hl_tip:"Tap any word to highlight it. Use 1 / 2 below for one or two words, and Next / Previous to step through.",
+    sel_para:"Choose para",
+    sel_surah:"Choose surah"
   }
 };

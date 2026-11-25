@@ -117,12 +117,14 @@
     h.lang = L; h.dir = L === "en" ? "ltr" : "rtl"; h.classList.remove("i18n-pending");
     Array.prototype.forEach.call(root.querySelectorAll("[data-i18n]"), function(e){
       var v = e.hasAttribute("data-n") ? { n:num(e.getAttribute("data-n")) } : null;
-      var s = t(e.getAttribute("data-i18n"), v);
+      var k = e.getAttribute("data-i18n"), s = t(k, v);
+      if (s === k) return;   /* v4.3: missing key -> keep built-in text, never show the raw key */
       if (e.hasAttribute("data-html")) e.innerHTML = s; else e.textContent = s;
     });
     ["title","aria-label","placeholder","alt"].forEach(function(a){
       Array.prototype.forEach.call(root.querySelectorAll("[data-i18n-" + a + "]"), function(e){
-        e.setAttribute(a, t(e.getAttribute("data-i18n-" + a), e.hasAttribute("data-n") ? { n:num(e.getAttribute("data-n")) } : null));
+        var k = e.getAttribute("data-i18n-" + a), s = t(k, e.hasAttribute("data-n") ? { n:num(e.getAttribute("data-n")) } : null);
+        if (s !== k) e.setAttribute(a, s);
       });
     });
     var tk = h.getAttribute("data-title");

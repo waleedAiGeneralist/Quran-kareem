@@ -180,3 +180,26 @@ details.orig{ margin:16px 0 0; }
   .nbc .nar{ font-size:calc(25px * var(--z)); }
   .nb-head .nb-open, .nb-close .nb-open{ font-size:calc(24px * var(--z)); }
 }
+/* ===== v4.3 ===== */
+/* word highlighter — background/box-shadow only (no padding) so Arabic letters stay joined */
+.hl-root .hlw.w{ cursor:pointer; border-radius:6px; -webkit-tap-highlight-color:transparent; transition:background-color .12s; }
+.hl-root .hlw.w:hover{ background:rgba(255,214,10,.28); }
+.hl-root .hlw.on{ background:#ffe14d; box-shadow:0 0 0 3px #ffe14d; color:#111; }
+.hl-root .hlw.on2{ background:#ffb3c7; box-shadow:0 0 0 3px #ffb3c7; }
+[data-theme="dark"] .hl-root .hlw.on{ background:#ffd60a; box-shadow:0 0 0 3px #ffd60a; color:#111; }
+[data-theme="dark"] .hl-root .hlw.on2{ background:#ff8fab; box-shadow:0 0 0 3px #ff8fab; color:#111; }
+.v4intro .hltip{ margin:0 0 6px; font-weight:600; color:var(--title); }
+body.has-hlbar{ padding-bottom:84px; }
+.hlbar{ position:fixed; z-index:50; left:50%; transform:translateX(-50%); bottom:calc(10px + env(safe-area-inset-bottom,0px)); direction:rtl;
+  display:flex; align-items:center; gap:6px; padding:6px 8px; border-radius:999px; background:var(--navy,#16264e); border:2px solid var(--gold,#e9c766);
+  box-shadow:0 6px 20px rgba(0,0,0,.3); }
+.hlbar .hlic{ font-size:22px; padding:0 4px; line-height:1; }
+.hlbar button{ min-width:48px; height:48px; border-radius:999px; border:2px solid transparent; background:rgba(255,255,255,.12); color:#fff;
+  font:700 20px/1 "Inter","Noto Naskh Arabic",sans-serif; cursor:pointer; display:grid; place-items:center; padding:0 10px; }
+.hlbar button:hover{ background:rgba(255,255,255,.22); }
+.hlbar button.hlm[aria-pressed="true"]{ background:#ffe14d; color:#111; border-color:#fff; }
+.hlbar .hlnav span{ font-size:34px; line-height:.8; margin-top:-4px; }
+.hlbar .hlclr{ font-size:18px; }
+.hlbar:not(.active) .hlnav.prev, .hlbar:not(.active) .hlclr{ opacity:.45; }
+@media (max-width:420px){ .hlbar{ gap:4px; padding:5px 6px; } .hlbar button{ min-width:46px; height:46px; } .hlbar .hlic{ display:none; } }
+@media print{ .hlbar{ display:none !important; } }
