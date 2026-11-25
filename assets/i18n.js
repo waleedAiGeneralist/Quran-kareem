@@ -95,6 +95,9 @@
     "بغیر رنگ (صرف کنارہ)":["بلا تعبئة (إطار فقط)","No fill (outline only)"], "خودکار":["تلقائي","Automatic"],
     "سیاہ":["أسود","Black"], "سفید":["أبيض","White"], "گلابی":["وردي","Pink"]
   };
+  /* v4: نئے صفحات کی اضافی عبارتیں (assets/i18n-x.js) */
+  var XT = window.QK_I18N_EXTRA;
+  if (XT) Object.keys(XT).forEach(function(l){ if (D[l]) Object.keys(XT[l]).forEach(function(k){ D[l][k] = XT[l][k]; }); });
   var LANGS = ["ur","ar","en"];
   var L = "ur";
   try { var s = localStorage.getItem("qk-lang"); if (LANGS.indexOf(s) >= 0) L = s; } catch(e) {}

@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-mKnxmKJo1K2QQK+8vKw7j4uUJW19j6Rz9uRmnbrnGJ8=' 'sha256-dk+L+9FhkOar2k47398yThVhq60wN8FJB5bEEdruR/g='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light dark">
 <title>قرآنِ حکیم — پارہ ۷ | مجتبیٰ آن لائن قرآن اکیڈمی</title>
 <meta name="description" content="قرآنِ حکیم پارہ ۷ (المائدة ۸۳ — الأنعام ۱۱۰) — ۱۶ سطری تجویدی نسخہ، آیت اور لفظ بہ لفظ ہائی لائٹ">
@@ -35,7 +37,7 @@ if(localStorage.getItem("qk-hdr")==="0")h.classList.add("hdr-off");}catch(e){h.s
       <button type="button" id="hdrHide" class="hbtn" title="پٹی چھپائیں" aria-label="پٹی چھپائیں" data-i18n-title="hide" data-i18n-aria-label="hide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 15.4 12 10.8l4.6 4.6L18 14l-6-6-6 6z"/></svg><span class="t" data-i18n="hide">پٹی چھپائیں</span></button>
     </div>
     <nav class="navrow" aria-label="پارہ اور سورت">
-      <a class="nb home" href="index.html" title="فہرست" aria-label="فہرست" data-i18n-title="home" data-i18n-aria-label="home">🏠<span class="t" data-i18n="home">فہرست</span></a>
+      <a class="nb home" href="quran.html" title="فہرست" aria-label="فہرست" data-i18n-title="home" data-i18n-aria-label="home">🏠<span class="t" data-i18n="home">فہرست</span></a>
       <a class="nb" href="para-06.html" title="پچھلا پارہ" aria-label="پچھلا پارہ" data-i18n-title="prev_para" data-i18n-aria-label="prev_para"><span class="ar">▶</span><span class="t" data-i18n="prev">پچھلا</span></a>
       <select id="parasel" aria-label="پارہ" data-i18n-aria-label="a_para"></select>
       <select id="surahsel" aria-label="سورت" data-i18n-aria-label="a_surah"></select>
@@ -85,7 +87,7 @@ if(localStorage.getItem("qk-hdr")==="0")h.classList.add("hdr-off");}catch(e){h.s
 
 <div class="pager">
   <a class="" href="para-06.html"><span class="ar">▶</span> <span data-i18n="para_n" data-n="6">پارہ ۶</span></a>
-  <a href="index.html">🏠 <span data-i18n="home">فہرست</span></a>
+  <a href="quran.html">🏠 <span data-i18n="home">فہرست</span></a>
   <a class="" href="para-08.html"><span data-i18n="para_n" data-n="8">پارہ ۸</span> <span class="ar">◀</span></a>
 </div>
 
