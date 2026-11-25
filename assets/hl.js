@@ -2,8 +2,8 @@
    متن کے حروف نہیں بدلتے: صرف ٹیکسٹ نوڈز کو <span> میں لپیٹا جاتا ہے۔ */
 (function () {
   "use strict";
-  var SEL = ".kalbox, .nar, .nm-allah, .qv, .nb-open, .rar, .chm";
-  var LETTER = /[\u0621-\u064A\u066E-\u06D3\u06D5\u06FA-\u06FC\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
+  var SEL = ".kalbox, .nar, .nm-allah, .qv, .nb-open, .rar, .chm, .hdut, .hdent";
+  var LETTER = /[\u0621-\u064A\u066E-\u06D3\u06D5\u06FA-\u06FC\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFFA-Za-z]/;
   var roots = document.querySelectorAll("main " + SEL.split(", ").join(", main "));
   if (!roots.length) return;
   var words = [];           // words[i] = [span, span, ...]

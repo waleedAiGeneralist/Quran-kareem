@@ -219,3 +219,9 @@ body.has-hlbar{ padding-bottom:84px; }
 html[lang="en"] .chc .chen{ order:3; font-size:calc(17px * var(--z)); border-top:1px dashed var(--border); }
 html[lang="en"] .chc .chur{ order:4; }
 @media (max-width:600px){ .chm{ font-size:calc(25px * var(--z)); } .chur{ font-size:calc(16.5px * var(--z)); } .chhead{ font-size:calc(21px * var(--z)); } }
+/* ===== v4.7 ===== */
+.hdc .chm{ margin-top:2px; }
+.hdc .hdlbl{ color:var(--title); font-weight:600; unicode-bidi:plaintext; }
+.hdc .hdref{ font-family:"Gulzar","Noto Nastaliq Urdu",var(--f-ui); font-size:calc(14.5px * var(--z)); line-height:2.1; color:var(--muted);
+  background:rgba(201,162,39,.10); border-radius:10px; padding:2px 12px; margin-top:6px; align-self:flex-start; }
+html[lang="en"] .hdc .hdref{ order:5; }

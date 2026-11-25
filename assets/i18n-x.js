@@ -13,7 +13,7 @@ window.QK_I18N_EXTRA = {
     x_nabi_intro:"نبی کریم ﷺ کے ۲۰۱ مبارک نام (دلائل الخیرات) — عربی، تلفظ اور انگریزی معنی کے ساتھ۔ نیچے اکیڈمی کے اصل پوسٹر بھی موجود ہیں۔",
     x_kalima_intro:"اسلام کے چھ کلمے — عربی متن اور انگریزی ترجمہ۔ ہر کلمے کے نیچے اکیڈمی کا اصل پوسٹر بھی دیکھا جا سکتا ہے۔",
     x_wudu_intro:"نماز و وضو — نیچے دیے گئے ذیلی سیکشنز میں سے انتخاب کریں: وضو، اذان، نماز کا طریقہ، نماز کا مکمل متن، دعائیں، نمازِ جنازہ وغیرہ (اکیڈمی کی کتاب اور سلائیڈز)۔",
-    x_hadith_intro:"ساٹھ (۶۰) احادیثِ مبارکہ — عربی متن، اردو ترجمہ اور حوالہ کے ساتھ (اکیڈمی کے اصل صفحات)۔",
+    x_hadith_intro:"ساٹھ (۶۰) احادیثِ مبارکہ — عربی متن (اعراب کے ساتھ)، اردو ترجمہ اور حوالہ، اور انگریزی ترجمہ۔",
     x_chalis_intro:"چالیس احادیث — عربی متن (اعراب کے ساتھ)، کتاب «تحفۃ النبی» سے اردو ترجمہ، اور حوالہ کے ساتھ انگریزی ترجمہ۔",
     x_duas_intro:"روزمرہ زندگی کی اکتالیس (۴۱) مسنون دعائیں — عربی، اردو اور انگریزی کے ساتھ (اکیڈمی کے اصل کارڈ)۔",
     x_rabbana_intro:"قرآنِ مجید کی چالیس (۴۰) ربّنا دعائیں — قرآنی متن اور انگریزی ترجمہ (Sahih International)۔ نیچے اردو کتاب «چہل ربنا» کے صفحات بھی ہیں۔",
@@ -100,7 +100,10 @@ window.QK_I18N_EXTRA = {
     x_pgq_next:"اگلا صفحہ",
     x_pgq_bad:"براہِ کرم {a} سے {b} تک کوئی صفحہ نمبر لکھیں 🙂",
     x_pgq_ok:"صفحہ {n} — پارہ {p} کھل رہا ہے…",
-    x_pgq_a:"صفحہ نمبر پر جائیں"
+    x_pgq_a:"صفحہ نمبر پر جائیں",
+    x_hd_tr:"ترجمہ:",
+    x_hd_ref:"حوالہ:",
+    x_totop:"اوپر جائیں"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -115,7 +118,7 @@ window.QK_I18N_EXTRA = {
     x_nabi_intro:"٢٠١ من أسماء النبي ﷺ (دلائل الخيرات) — بالعربية مع النطق والمعنى بالإنجليزية. وفي الأسفل ملصقات الأكاديمية الأصلية.",
     x_kalima_intro:"الكلمات الست — النص العربي مع الترجمة الإنجليزية. ويمكن عرض الملصق الأصلي للأكاديمية تحت كل كلمة.",
     x_wudu_intro:"الصلاة والوضوء — اختر قسمًا فرعيًا: الوضوء، الأذان، صفة الصلاة، نص الصلاة كاملًا، الأدعية، صلاة الجنازة وغيرها (من كتاب الأكاديمية وشرائحها).",
-    x_hadith_intro:"ستون حديثًا شريفًا — النص العربي مع الترجمة الأردية والمصدر (الصفحات الأصلية للأكاديمية).",
+    x_hadith_intro:"ستون حديثًا شريفًا — النص العربي مشكولًا، مع الترجمة الأردية والمرجع، والترجمة الإنجليزية.",
     x_chalis_intro:"الأربعون حديثًا — النص العربي مشكولًا، والترجمة الأردية من كتاب «تحفة النبي»، والترجمة الإنجليزية مع المصدر.",
     x_duas_intro:"واحد وأربعون دعاءً مأثورًا للحياة اليومية — بالعربية والأردية والإنجليزية (البطاقات الأصلية للأكاديمية).",
     x_rabbana_intro:"أربعون دعاءً قرآنيًا تبدأ بـ «ربنا» — النص القرآني مع الترجمة الإنجليزية (Sahih International). وفي الأسفل صفحات كتاب «چہل ربنا» بالأردية.",
@@ -202,7 +205,10 @@ window.QK_I18N_EXTRA = {
     x_pgq_next:"الصفحة التالية",
     x_pgq_bad:"من فضلك اكتب رقم صفحة من {a} إلى {b} 🙂",
     x_pgq_ok:"الصفحة {n} — يُفتح الجزء {p}…",
-    x_pgq_a:"اذهب إلى رقم الصفحة"
+    x_pgq_a:"اذهب إلى رقم الصفحة",
+    x_hd_tr:"الترجمة:",
+    x_hd_ref:"المرجع:",
+    x_totop:"العودة إلى الأعلى"
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -217,7 +223,7 @@ window.QK_I18N_EXTRA = {
     x_nabi_intro:"201 blessed names of the Prophet ﷺ (Dalā’il-ul-Khayrāt) — Arabic with transliteration and English meaning. The academy's original posters are below.",
     x_kalima_intro:"The Six Kalimas — Arabic text with English translation. The academy's original poster can be opened under each Kalma.",
     x_wudu_intro:"Namaz & Wudu — choose a subsection below: Wudu, Azan, method of Namaz, full Namaz text, duas, Janaza prayer and more (from the academy's book and slides).",
-    x_hadith_intro:"Sixty Ahadith — Arabic text, Urdu translation and reference (the academy's original pages).",
+    x_hadith_intro:"Sixty Ahadith — Arabic text with full harakat, the Urdu translation and reference from the book, and an English translation from published sources (sunnah.com) with references.",
     x_chalis_intro:"Chalis (40) Ahadith — Arabic text with full harakat, the Urdu translation from the book «Tuhfat-un-Nabi», and an English translation from published sources (sunnah.com) with references.",
     x_duas_intro:"41 Masnoon duas for daily life — Arabic, Urdu and English (the academy's original cards).",
     x_rabbana_intro:"40 Rabbana duas from the Holy Quran — Quranic text with English translation (Sahih International). Pages of the Urdu book “Chahal Rabbana” are below.",
@@ -304,6 +310,9 @@ window.QK_I18N_EXTRA = {
     x_pgq_next:"Next page",
     x_pgq_bad:"Please type a page number from {a} to {b} 🙂",
     x_pgq_ok:"Page {n} — opening Para {p}…",
-    x_pgq_a:"Go to page number"
+    x_pgq_a:"Go to page number",
+    x_hd_tr:"Urdu translation:",
+    x_hd_ref:"Reference:",
+    x_totop:"Back to top"
   }
 };

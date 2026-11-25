@@ -1,0 +1,23 @@
+/* v4.7: floating back-to-top button — navy/gold, icon only, RTL/LTR aware, safe-area aware */
+.totop{ position:fixed; z-index:45; width:52px; height:52px; padding:0; margin:0; border-radius:50%;
+  bottom:calc(18px + env(safe-area-inset-bottom,0px)); left:auto; right:calc(14px + env(safe-area-inset-right,0px));
+  display:grid; place-items:center; cursor:pointer; color:var(--gold,#e9c766);
+  background:var(--navy,#16264e); border:2px solid var(--gold,#e9c766); box-shadow:0 4px 14px rgba(16,29,61,.35);
+  opacity:0; visibility:hidden; transform:translateY(14px) scale(.9);
+  transition:opacity .22s ease, transform .22s ease, visibility 0s linear .22s, background .15s;
+  -webkit-tap-highlight-color:transparent; }
+html[dir="rtl"] .totop{ right:auto; left:calc(14px + env(safe-area-inset-left,0px)); }
+.totop.show{ opacity:.94; visibility:visible; transform:none; transition:opacity .22s ease, transform .22s ease, visibility 0s, background .15s; }
+.totop:hover{ background:var(--navy-soft,#2c447c); opacity:1; }
+.totop:focus-visible{ outline:3px solid var(--gold,#e9c766); outline-offset:3px; opacity:1; }
+.totop svg{ width:28px; height:28px; fill:currentColor; display:block; }
+[data-theme="dark"] .totop{ background:#1d2b52; box-shadow:0 4px 16px rgba(0,0,0,.6); }
+[data-theme="dark"] .totop:hover{ background:#2b3d68; }
+/* stack above the para-page "show header" pill (same side) and above the highlighter toolbar */
+.hdr-off .totop{ bottom:calc(18px + 38px + 12px + env(safe-area-inset-bottom,0px)); }
+body.has-hlbar .totop{ bottom:calc(10px + 64px + 14px + env(safe-area-inset-bottom,0px)); }
+/* room at the end of the page so the last lines can scroll clear of the button */
+.totop-sp{ height:72px; }
+body.has-hlbar .totop-sp{ height:70px; }
+@media (prefers-reduced-motion: reduce){ .totop, .totop.show{ transition:none; transform:none; } }
+@media print{ .totop, .totop-sp{ display:none !important; } }
