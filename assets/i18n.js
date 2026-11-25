@@ -2,6 +2,7 @@
 (function(){
   'use strict';
   var EN_NAMES = ["Al-Fatihah", "Al-Baqarah", "Ali 'Imran", "An-Nisa", "Al-Ma'idah", "Al-An'am", "Al-A'raf", "Al-Anfal", "At-Tawbah", "Yunus", "Hud", "Yusuf", "Ar-Ra'd", "Ibrahim", "Al-Hijr", "An-Nahl", "Al-Isra", "Al-Kahf", "Maryam", "Taha", "Al-Anbya", "Al-Hajj", "Al-Mu'minun", "An-Nur", "Al-Furqan", "Ash-Shu'ara", "An-Naml", "Al-Qasas", "Al-'Ankabut", "Ar-Rum", "Luqman", "As-Sajdah", "Al-Ahzab", "Saba", "Fatir", "Ya-Sin", "As-Saffat", "Sad", "Az-Zumar", "Ghafir", "Fussilat", "Ash-Shuraa", "Az-Zukhruf", "Ad-Dukhan", "Al-Jathiyah", "Al-Ahqaf", "Muhammad", "Al-Fath", "Al-Hujurat", "Qaf", "Adh-Dhariyat", "At-Tur", "An-Najm", "Al-Qamar", "Ar-Rahman", "Al-Waqi'ah", "Al-Hadid", "Al-Mujadila", "Al-Hashr", "Al-Mumtahanah", "As-Saf", "Al-Jumu'ah", "Al-Munafiqun", "At-Taghabun", "At-Talaq", "At-Tahrim", "Al-Mulk", "Al-Qalam", "Al-Haqqah", "Al-Ma'arij", "Nuh", "Al-Jinn", "Al-Muzzammil", "Al-Muddaththir", "Al-Qiyamah", "Al-Insan", "Al-Mursalat", "An-Naba", "An-Nazi'at", "'Abasa", "At-Takwir", "Al-Infitar", "Al-Mutaffifin", "Al-Inshiqaq", "Al-Buruj", "At-Tariq", "Al-A'la", "Al-Ghashiyah", "Al-Fajr", "Al-Balad", "Ash-Shams", "Al-Layl", "Ad-Duhaa", "Ash-Sharh", "At-Tin", "Al-'Alaq", "Al-Qadr", "Al-Bayyinah", "Az-Zalzalah", "Al-'Adiyat", "Al-Qari'ah", "At-Takathur", "Al-'Asr", "Al-Humazah", "Al-Fil", "Quraysh", "Al-Ma'un", "Al-Kawthar", "Al-Kafirun", "An-Nasr", "Al-Masad", "Al-Ikhlas", "Al-Falaq", "An-Nas"];
+  var EN_PARAS = ["Alif Lam Meem", "Sayaqool", "Tilkar Rusul", "Lan Tanaloo", "Wal Mohsanat", "La Yuhibbullah", "Wa Iza Samiu", "Wa Lau Annana", "Qalal Malao", "Wa A'lamu", "Yatazeroon", "Wa Mamin Da'abat", "Wa Ma Ubrioo", "Rubama", "Subhanallazi", "Qal Alam", "Iqtaraba", "Qad Aflaha", "Wa Qalallazina", "Amman Khalaq", "Utlu Ma Oohi", "Wa Manyaqnut", "Wa Mali", "Faman Azlam", "Elahe Yuruddo", "Ha'a Meem", "Qala Fama Khatbukum", "Qad Sami Allah", "Tabarakallazi", "Amma Yatasa'aloon"];
   var D = {
     ur: {
       quran:"قرآنِ حکیم", para_n:"پارہ {n}", all30:"مکمل {n} پارے",
@@ -63,7 +64,7 @@
       quran:"The Holy Quran", para_n:"Para {n}", all30:"All {n} Paras",
       brand:"Mujtaba Online Quran Academy", brand2:"مجتبیٰ آن لائن قرآن اکیڈمی",
       home:"Home", prev_para:"Previous para", next_para:"Next para", prev:"Prev", next:"Next",
-      sel_para:"📖 Choose para", sel_surah:"📜 Choose surah", opt_para:"Para {n} — {name}", opt_surah:"{n}. {tr} — {name} (Para {p})",
+      sel_para:"📖 Choose para", sel_surah:"📜 Choose surah", opt_para:"Para {n} — {tr}", opt_surah:"{n}. {tr} — {name} (Para {p})",
       a_para:"Para", a_surah:"Surah", a_page:"Page", a_lang:"Language",
       w_prev_t:"Previous word (Backspace)", w_next_t:"Next word (Space)", bad:"Mistake", bad_t:"Mark mistake (X)", ok:"Correct", ok_t:"Corrected (C)",
       auto:"Auto", auto_t:"Auto play (A)", stop:"Stop", color:"Colours", color_t:"Colours & settings", clear:"Clear", clear_t:"Clear (Esc)",
@@ -142,7 +143,7 @@
     try { localStorage.setItem("qk-theme", m); } catch(e) {}
     var mc = document.querySelector('meta[name="theme-color"]'); if (mc) mc.setAttribute("content", m === "dark" ? "#0a1022" : "#16264e");
   }
-  window.QK_I18N = { t:t, num:num, lang:function(){ return L; }, cname:cname, surahName:surahName, enName:function(i){ return EN_NAMES[i]; }, apply:apply, setLang:setLang };
+  window.QK_I18N = { t:t, num:num, lang:function(){ return L; }, cname:cname, surahName:surahName, enName:function(i){ return EN_NAMES[i]; }, enPara:function(i){ return EN_PARAS[i]; }, apply:apply, setLang:setLang };
   apply();
   document.addEventListener("click", function(e){
     var b = e.target.closest && e.target.closest(".langsw button"); if (b) { setLang(b.getAttribute("data-lang")); return; }

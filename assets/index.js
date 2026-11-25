@@ -7,7 +7,7 @@
   var grid = document.getElementById("pgrid"), tb = document.getElementById("stbody"), f = document.getElementById("sfilter");
   function render(){
     grid.innerHTML = P.map(function(p){
-      return '<a class="card" href="para-' + pad(p[0]) + '.html"><span class="no">' + ud(p[0]) + '</span><div class="nm">' + esc(p[1]) + '</div><div class="rg">' +
+      return '<a class="card" href="para-' + pad(p[0]) + '.html"><span class="no">' + ud(p[0]) + '</span><div class="nm">' + esc(p[1]) + '</div>' + (I.lang() === "en" ? '<div class="ptr">' + esc(I.enPara(p[0] - 1)) + '</div>' : '') + '<div class="rg">' +
         esc(I.surahName(p[2] - 1)) + ' ' + ud(p[3]) + ' — ' + esc(I.surahName(p[4] - 1)) + ' ' + ud(p[5]) + '<br>' + T("card_pages", { a:ud(p[6]), b:ud(p[7]) }) + '</div></a>';
     }).join("");
     tb.innerHTML = S.map(function(s, i){

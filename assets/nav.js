@@ -11,7 +11,7 @@
   function build(){
     if (ps){
       ps.innerHTML = ""; opt(ps, "", T("sel_para"));
-      P.forEach(function(p){ var o = opt(ps, p[0], T("opt_para", { n:ud(p[0]), name:p[1] })); if (p[0] === cur) o.selected = true; });
+      P.forEach(function(p){ var o = opt(ps, p[0], T("opt_para", { n:ud(p[0]), name:p[1], tr:I.enPara(p[0] - 1) })); if (p[0] === cur) o.selected = true; });
     }
     if (ss){
       ss.innerHTML = ""; opt(ss, "", T("sel_surah"));

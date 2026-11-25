@@ -2,7 +2,7 @@
 window.QK_I18N_EXTRA = {
   ur: {
     x_home:"ہوم", x_back:"واپس ہوم اسکرین پر", x_jump:"فہرست", x_apptitle:"قرآن و دینی تعلیم", x_choose:"ایک سیکشن منتخب کریں",
-    x_quran:"قرآنِ حکیم", x_asma:"اسماء الحسنیٰ", x_nabi:"اسماء النبی ﷺ", x_kalima:"چھ کلمے", x_wudu:"نماز و وضو", x_hadith:"احادیث",
+    x_quran:"قرآن کریم", x_asma:"اسماء الحسنیٰ", x_nabi:"اسماء النبی ﷺ", x_kalima:"چھ کلمے", x_wudu:"نماز و وضو", x_hadith:"احادیث",
     x_chalis:"چالیس احادیث", x_duas:"روزمرہ کی دعائیں", x_rabbana:"ربنا دعائیں", x_qaida:"نورانی قاعدہ",
     x_s_quran:"۳۰ پارے · ۱۱۴ سورتیں", x_s_asma:"اللہ تعالیٰ کے ۹۹ نام", x_s_nabi:"نبی کریم ﷺ کے مبارک نام", x_s_kalima:"عربی متن اور ترجمہ",
     x_s_wudu:"وضو کا طریقہ", x_s_hadith:"۶۰ احادیث مع ترجمہ", x_s_chalis:"مع اردو ترجمہ", x_s_duas:"۴۱ مسنون دعائیں", x_s_rabbana:"۴۰ قرآنی دعائیں", x_s_qaida:"مجتبیٰ قاعدہ",
@@ -44,7 +44,7 @@ window.QK_I18N_EXTRA = {
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
-    x_quran:"The Holy Quran", x_asma:"Asma ul Husna", x_nabi:"Asma al-Nabi ﷺ", x_kalima:"Six Kalimas", x_wudu:"Namaz & Wudu", x_hadith:"Hadith",
+    x_quran:"Quran Kareem", x_asma:"Asma ul Husna", x_nabi:"Asma al-Nabi ﷺ", x_kalima:"Six Kalimas", x_wudu:"Namaz & Wudu", x_hadith:"Hadith",
     x_chalis:"Chalis Ahadith", x_duas:"Daily Duas", x_rabbana:"Rabbana Duas", x_qaida:"Noorani Qaida",
     x_s_quran:"30 Paras · 114 Surahs", x_s_asma:"99 Names of Allah", x_s_nabi:"Names of the Prophet ﷺ", x_s_kalima:"Arabic text & translation",
     x_s_wudu:"Method of Wudu", x_s_hadith:"60 Hadith with translation", x_s_chalis:"40 Hadith, Urdu translation", x_s_duas:"41 Masnoon duas", x_s_rabbana:"40 Quranic duas", x_s_qaida:"Mujtaba Qaida",
