@@ -1,0 +1,31 @@
+/* v4.5: Quran page-number search (quran.html + para pages) */
+/* page-number search */
+.pgq-row{ display:flex; align-items:stretch; gap:8px; justify-content:center; }
+.pgq-in{ font:inherit; text-align:center; border:2px solid var(--gold-deep); border-radius:12px; background:var(--surface); color:var(--text); min-width:0; }
+.pgq-in:focus{ outline:3px solid #ffd60a; outline-offset:1px; }
+.pgq-go, .pgq-step{ font:inherit; font-weight:700; cursor:pointer; border-radius:12px; border:0; -webkit-tap-highlight-color:transparent; }
+.pgq-go{ background:#1f9d55; color:#fff; }
+.pgq-go:active, .pgq-step:active{ transform:scale(.96); }
+.pgq-step{ background:var(--navy); color:var(--gold); }
+[data-theme="dark"] .pgq-step{ background:#2b3d68; }
+.pgq-msg{ min-height:1.6em; text-align:center; font-weight:600; color:var(--muted); }
+.pgq-msg.err{ color:#d62828; }
+[data-theme="dark"] .pgq-msg.err{ color:#ff8a8a; }
+.pgq.big{ max-width:640px; margin:18px auto 6px; padding:16px 14px 10px; background:var(--cream); border:2px solid var(--gold-deep); border-radius:18px; text-align:center; box-shadow:0 2px 10px rgba(16,29,61,.10); }
+.pgq.big h2{ margin:0 0 4px; font-size:22px; color:var(--title); }
+.pgq.big .pgq-lbl{ display:block; margin:0 0 10px; color:var(--soft); font-size:15px; }
+.pgq.big .pgq-in{ width:150px; height:60px; font-size:30px; font-weight:700; }
+.pgq.big .pgq-step{ width:56px; height:60px; font-size:30px; }
+.pgq.big .pgq-go{ height:60px; padding:0 22px; font-size:22px; }
+.pgq.big .pgq-msg{ margin-top:8px; font-size:16px; }
+.pgq.mini{ position:relative; flex:0 0 auto; }
+.pgq.mini .pgq-row{ gap:4px; }
+.pgq.mini .pgq-in{ width:64px; height:38px; font-size:18px; font-weight:700; border-width:1.5px; border-radius:9px; }
+.pgq.mini .pgq-step{ width:32px; height:38px; font-size:18px; border-radius:9px; }
+.pgq.mini .pgq-go{ height:38px; padding:0 10px; font-size:15px; border-radius:9px; }
+.pgq.mini .pgq-msg{ position:absolute; top:100%; inset-inline-start:0; z-index:30; min-height:0; margin-top:4px; padding:0; font-size:13px; white-space:nowrap; background:var(--surface); border-radius:8px; }
+.pgq.mini .pgq-msg:not(:empty){ padding:4px 8px; box-shadow:0 2px 8px rgba(0,0,0,.18); }
+.pganc{ display:block; height:0; overflow:hidden; }
+@media (max-width:600px){ .pgq.big .pgq-in{ width:110px; } .pgq.big .pgq-go{ padding:0 14px; }
+  .pgz:has(.pgq.mini){ flex-wrap:wrap; row-gap:6px; }
+  .pgq.mini{ flex:1 1 100%; min-width:0; max-width:100%; } .pgq.mini .pgq-row{ justify-content:stretch; } .pgq.mini .pgq-in{ flex:1 1 0; width:0; } .pgq.mini .pgq-step{ width:44px; } .pgq.mini .pgq-go{ padding:0 18px; } }

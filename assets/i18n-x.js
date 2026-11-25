@@ -91,7 +91,16 @@ window.QK_I18N_EXTRA = {
     x_jz_8:"نابالغ بچے کی دعا",
     x_jz_9:"نابالغ بچی کی دعا",
     x_jz_10:"کچھ ضروری باتیں",
-    x_chno:"حدیث شریف نمبر {n}"
+    x_chno:"حدیث شریف نمبر {n}",
+    x_pgq_h:"صفحہ نمبر سے تلاش کریں",
+    x_pgq_lbl:"صفحہ نمبر لکھیں (۱ سے ۵۴۹ تک)",
+    x_pgq_ph:"صفحہ نمبر",
+    x_pgq_go:"جائیں",
+    x_pgq_prev:"پچھلا صفحہ",
+    x_pgq_next:"اگلا صفحہ",
+    x_pgq_bad:"براہِ کرم {a} سے {b} تک کوئی صفحہ نمبر لکھیں 🙂",
+    x_pgq_ok:"صفحہ {n} — پارہ {p} کھل رہا ہے…",
+    x_pgq_a:"صفحہ نمبر پر جائیں"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -184,7 +193,16 @@ window.QK_I18N_EXTRA = {
     x_jz_8:"دعاء الصبي",
     x_jz_9:"دعاء الصبية",
     x_jz_10:"أمور مهمة",
-    x_chno:"الحديث الشريف رقم {n}"
+    x_chno:"الحديث الشريف رقم {n}",
+    x_pgq_h:"ابحث برقم الصفحة",
+    x_pgq_lbl:"اكتب رقم الصفحة (من ١ إلى ٥٤٩)",
+    x_pgq_ph:"رقم الصفحة",
+    x_pgq_go:"اذهب",
+    x_pgq_prev:"الصفحة السابقة",
+    x_pgq_next:"الصفحة التالية",
+    x_pgq_bad:"من فضلك اكتب رقم صفحة من {a} إلى {b} 🙂",
+    x_pgq_ok:"الصفحة {n} — يُفتح الجزء {p}…",
+    x_pgq_a:"اذهب إلى رقم الصفحة"
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -277,6 +295,15 @@ window.QK_I18N_EXTRA = {
     x_jz_8:"Dua for a boy (minor)",
     x_jz_9:"Dua for a girl (minor)",
     x_jz_10:"Some important points",
-    x_chno:"Hadith Shareef no. {n}"
+    x_chno:"Hadith Shareef no. {n}",
+    x_pgq_h:"Find a page",
+    x_pgq_lbl:"Type a page number (1 to 549)",
+    x_pgq_ph:"Page no.",
+    x_pgq_go:"Go",
+    x_pgq_prev:"Previous page",
+    x_pgq_next:"Next page",
+    x_pgq_bad:"Please type a page number from {a} to {b} 🙂",
+    x_pgq_ok:"Page {n} — opening Para {p}…",
+    x_pgq_a:"Go to page number"
   }
 };
