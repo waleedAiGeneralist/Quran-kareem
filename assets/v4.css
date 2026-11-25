@@ -203,3 +203,19 @@ body.has-hlbar{ padding-bottom:84px; }
 .hlbar:not(.active) .hlnav.prev, .hlbar:not(.active) .hlclr{ opacity:.45; }
 @media (max-width:420px){ .hlbar{ gap:4px; padding:5px 6px; } .hlbar button{ min-width:46px; height:46px; } .hlbar .hlic{ display:none; } }
 @media print{ .hlbar{ display:none !important; } }
+/* ===== v4.4 ===== */
+.chlist{ display:flex; flex-direction:column; gap:14px; max-width:860px; margin:0 auto; }
+.chc{ background:var(--surface); border:1.8px solid var(--gold-deep); box-shadow:0 2px 8px rgba(16,29,61,.10); border-radius:16px; padding:14px 16px 16px; direction:rtl; text-align:right; scroll-margin-top:90px; }
+.chhead{ font-family:"Gulzar","Noto Nastaliq Urdu",var(--f-ui); font-size:calc(23px * var(--z)); line-height:2.1; color:var(--title); text-align:center; }
+.chno{ font-family:"Gulzar",var(--f-ui); font-size:calc(16px * var(--z)); line-height:2; color:var(--muted); display:flex; align-items:center; gap:8px; }
+.chno .nno{ position:static; }
+.chm{ font-family:var(--f-kal); font-size:calc(29px * var(--z)); line-height:2.25; color:var(--text); margin:6px 0 4px; }
+.chm .chq{ color:var(--title); font-size:.82em; }
+.chur{ font-family:"Gulzar","Noto Nastaliq Urdu",var(--f-ui); font-size:calc(18px * var(--z)); line-height:2.3; color:var(--text); border-top:1px dashed var(--border); padding-top:6px; }
+.chc{ display:flex; flex-direction:column; }
+.chen{ font-family:var(--f-ui); font-size:calc(15.5px * var(--z)); line-height:1.65; color:var(--text); text-align:left; direction:ltr; border-top:1px dashed var(--border); padding-top:8px; margin-top:6px; }
+.chen .chent{ display:block; }
+.chen .chref{ display:block; margin-top:4px; font-size:calc(12.5px * var(--z)); color:var(--muted); font-style:italic; }
+html[lang="en"] .chc .chen{ order:3; font-size:calc(17px * var(--z)); border-top:1px dashed var(--border); }
+html[lang="en"] .chc .chur{ order:4; }
+@media (max-width:600px){ .chm{ font-size:calc(25px * var(--z)); } .chur{ font-size:calc(16.5px * var(--z)); } .chhead{ font-size:calc(21px * var(--z)); } }
