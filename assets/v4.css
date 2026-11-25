@@ -225,3 +225,23 @@ html[lang="en"] .chc .chur{ order:4; }
 .hdc .hdref{ font-family:"Gulzar","Noto Nastaliq Urdu",var(--f-ui); font-size:calc(14.5px * var(--z)); line-height:2.1; color:var(--muted);
   background:rgba(201,162,39,.10); border-radius:10px; padding:2px 12px; margin-top:6px; align-self:flex-start; }
 html[lang="en"] .hdc .hdref{ order:5; }
+/* ===== v4.8 ===== */
+.eidtx{ max-width:860px; margin:0 auto; direction:rtl; text-align:right; font-family:"Gulzar","Noto Nastaliq Urdu",var(--f-ui); color:var(--text); }
+.eidtx .etitle{ font-family:inherit; font-size:calc(25px * var(--z)); line-height:2.1; color:var(--title); text-align:center; margin:4px 0 10px; font-weight:400; }
+.eidtx .esec{ background:var(--surface); border:1.8px solid var(--gold-deep); border-radius:16px; box-shadow:0 2px 8px rgba(16,29,61,.10); padding:10px 16px 12px; margin:0 0 14px; scroll-margin-top:90px; }
+.eidtx .ehead{ font-family:inherit; font-weight:400; font-size:calc(21px * var(--z)); line-height:2.1; color:var(--title); margin:0 0 6px; padding:0 0 4px;
+  border-bottom:1px dashed var(--border); display:flex; align-items:center; gap:10px; }
+.eidtx .ehead::before{ content:""; flex:none; width:12px; height:12px; border-radius:3px; transform:rotate(45deg); background:var(--gold-deep); }
+.eidtx .epara{ font-size:calc(18.5px * var(--z)); line-height:2.35; margin:0; }
+.eidtx .esteps{ list-style:none; margin:0; padding:0; }
+.eidtx .esteps > li{ display:flex; align-items:flex-start; gap:12px; font-size:calc(18.5px * var(--z)); line-height:2.35; padding:4px 0; }
+.eidtx .esteps > li + li{ border-top:1px dotted var(--border); }
+.eidtx .eno{ flex:none; width:32px; height:32px; margin-top:10px; border-radius:50%; display:grid; place-items:center; background:var(--navy); color:var(--gold);
+  border:1.5px solid var(--gold-deep); font-family:var(--f-ui); font-size:15px; line-height:1; }
+.eidtx .etx{ flex:1; min-width:0; }
+.eidtx .esub{ list-style:none; margin:2px 0 0; padding:0 4px 0 0; }
+.eidtx .esub li{ display:flex; align-items:flex-start; gap:10px; }
+.eidtx .edot{ flex:none; width:9px; height:9px; margin-top:20px; border-radius:50%; background:var(--gold-deep); }
+[data-theme="dark"] .eidtx .eno{ background:#1d2b52; }
+.eidchart .pimg{ max-width:560px; margin-inline:auto; }
+@media (max-width:600px){ .eidtx .esteps > li, .eidtx .epara{ font-size:calc(17px * var(--z)); } .eidtx .etitle{ font-size:calc(22px * var(--z)); } .eidtx .esec{ padding:8px 12px 10px; } .eidtx .eno{ margin-top:8px; } .eidtx .edot{ margin-top:17px; } }

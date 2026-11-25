@@ -103,7 +103,12 @@ window.QK_I18N_EXTRA = {
     x_pgq_a:"صفحہ نمبر پر جائیں",
     x_hd_tr:"ترجمہ:",
     x_hd_ref:"حوالہ:",
-    x_totop:"اوپر جائیں"
+    x_totop:"اوپر جائیں",
+    x_s_nm_eid:"نیت، زائد تکبیریں اور ترتیب کا چارٹ",
+    x_eid_chart:"نمازِ عید کی ترتیب",
+    x_nm_eid_intro:"نمازِ عید کا طریقہ (حنفی) — نیت، پہلی رکعت، دوسری رکعت اور نماز کے بعد؛ نیچے نمازِ عید کی ترتیب کا چارٹ۔",
+    x_nm_eid:"عیدین کا طریقہ",
+    x_t_nm_eid:"عیدین کا طریقہ | مجتبیٰ آن لائن قرآن اکیڈمی"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -208,7 +213,12 @@ window.QK_I18N_EXTRA = {
     x_pgq_a:"اذهب إلى رقم الصفحة",
     x_hd_tr:"الترجمة:",
     x_hd_ref:"المرجع:",
-    x_totop:"العودة إلى الأعلى"
+    x_totop:"العودة إلى الأعلى",
+    x_s_nm_eid:"النية والتكبيرات الزوائد ومخطط الترتيب",
+    x_eid_chart:"ترتيب صلاة العيد",
+    x_nm_eid_intro:"صفة صلاة العيد (على المذهب الحنفي) — النية، الركعة الأولى، الركعة الثانية، وما بعد الصلاة؛ وفي الأسفل مخطط ترتيب صلاة العيد. (النص بالأردية)",
+    x_nm_eid:"صفة صلاة العيدين",
+    x_t_nm_eid:"صفة صلاة العيدين | أكاديمية مجتبى للقرآن عبر الإنترنت"
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -313,6 +323,11 @@ window.QK_I18N_EXTRA = {
     x_pgq_a:"Go to page number",
     x_hd_tr:"Urdu translation:",
     x_hd_ref:"Reference:",
-    x_totop:"Back to top"
+    x_totop:"Back to top",
+    x_s_nm_eid:"Niyyat, extra takbeers & order chart",
+    x_eid_chart:"Order of the Eid prayer",
+    x_nm_eid_intro:"The method of the Eid prayer (Hanafi) — Niyyat, first rak‘ah, second rak‘ah and after the prayer (text in Urdu); the chart below shows the order of the Eid prayer.",
+    x_nm_eid:"Eid Prayer Method",
+    x_t_nm_eid:"Eid Prayer Method | Mujtaba Online Quran Academy"
   }
 };
