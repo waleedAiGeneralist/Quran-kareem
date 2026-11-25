@@ -160,3 +160,23 @@ details.orig .pimg{ margin-top:10px; }
 .kurdu{ font-family:var(--f-ui); font-size:calc(16.5px * var(--z)); line-height:2.1; color:var(--text); margin-top:10px; direction:rtl; text-align:right; }
 .kalcard .ktr{ margin-top:8px; text-align:left; }
 @media (max-width:600px){ .kalbox{ font-size:calc(29px * var(--z)); line-height:2.3; padding:10px 8px 14px; } .kurdu{ font-size:calc(15.5px * var(--z)); } }
+/* ===== v4.2 ===== */
+.subtiles{ margin-top:6px; }
+.t-sub .tic{ font-size:21px; }
+.v4 .navrow .nb.up{ white-space:nowrap; }
+.backhome a + a{ margin-inline-start:8px; }
+.nb-grid{ grid-template-columns:repeat(auto-fill,minmax(calc(210px * var(--z)),1fr)); }
+.nbc .nar{ font-size:calc(30px * var(--z)); line-height:2.05; padding:2px 0; }
+.nbc .nsaw{ font-size:.62em; color:var(--gold-deep); }
+.nbc .ntl{ font-family:var(--f-lat); text-transform:none; letter-spacing:0; }
+.nbc .nmn{ font-family:var(--f-lat); }
+.nb-head .nb-open, .nb-close .nb-open{ font-family:var(--f-kal); font-size:calc(30px * var(--z)); line-height:2.1; color:var(--title); }
+.nb-head .nmn, .nb-close [lang="en"]{ font-family:var(--f-lat); font-size:14px; }
+.nb-close{ margin-top:16px; }
+details.orig{ margin:16px 0 0; }
+.pimgs.wide .pimg{ max-width:1100px; margin-inline:auto; }
+@media (max-width:600px){
+  .nb-grid{ grid-template-columns:1fr 1fr; }
+  .nbc .nar{ font-size:calc(25px * var(--z)); }
+  .nb-head .nb-open, .nb-close .nb-open{ font-size:calc(24px * var(--z)); }
+}

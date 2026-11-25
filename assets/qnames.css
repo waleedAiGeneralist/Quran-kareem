@@ -1,0 +1,9 @@
+/* v4.2: para / surah names — Scheherazade New renders Indo-Pak marks (ٓ ۡ ۤ ٰ) cleanly; extra line-height so marks are never clipped */
+:root{ --f-qn:"Scheherazade New","Amiri","Noto Naskh Arabic",serif; }
+.card .nm{ font-family:var(--f-qn); font-size:26px; line-height:2.15; padding-top:4px; margin:6px 0 2px; overflow:visible; }
+h1 .pname{ font-family:var(--f-qn); font-weight:700; font-size:1.08em; line-height:2; }
+.stable td.sn, .stable td.sn .arn{ font-family:var(--f-qn); line-height:2.1; }
+.stable td.sn{ font-size:21px; } .stable td.sn .arn{ font-size:18px; }
+.stable td.sn .tr{ font-family:var(--f-ui); }
+#parasel, #surahsel{ font-family:var(--f-qn),var(--f-ui); font-size:17px; line-height:1.9; min-height:44px; padding-top:2px; padding-bottom:2px; }
+[lang="en"] #parasel, [lang="en"] #surahsel{ font-family:var(--f-ui); font-size:15px; }
