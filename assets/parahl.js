@@ -16,7 +16,7 @@
   if (!W.length) return;
 
   var on = false, mode = 1, start = -1;
-  try { mode = localStorage.getItem("qk-hl-mode") === "2" ? 2 : 1; } catch (e) {}
+  try { mode = Math.min(4, Math.max(1, parseInt(localStorage.getItem("qk-hl-mode"), 10) || 1)); } catch (e) {}
 
   function layer(p) {
     var pgEl = document.getElementById("pg" + p); if (!pgEl) return null;
@@ -77,12 +77,12 @@
   function go(d) {
     if (!on) setOn(true, true);
     if (start < 0) start = firstVisible();
-    else start = Math.max(0, Math.min(W.length - 1, start + d));   // word by word, also in 2-word mode
+    else start = Math.max(0, Math.min(W.length - 1, start + d));   // word by word, also in 2 / 3 / 4-word mode
     paint(true);
   }
   function setMode(m) {
     mode = m; try { localStorage.setItem("qk-hl-mode", String(m)); } catch (e) {}
-    b1.setAttribute("aria-pressed", m === 1 ? "true" : "false"); b2.setAttribute("aria-pressed", m === 2 ? "true" : "false");
+    [b1, b2, b3, b4].forEach(function (b, n) { b.setAttribute("aria-pressed", m === n + 1 ? "true" : "false"); });
     paint(false);
   }
   function hitAt(p, x, y) {
@@ -124,6 +124,8 @@
   var pen = btn("hlpen", '<span aria-hidden="true">🖍️</span>', "x_qhl_pen", "ہائی لائٹر آن / بند", function () { setOn(!on); });
   var b1 = btn("hlm", "1", "x_hl_1", "ایک لفظ", function () { if (!on) setOn(true, true); setMode(1); });
   var b2 = btn("hlm", "2", "x_hl_2", "دو الفاظ", function () { if (!on) setOn(true, true); setMode(2); });
+  var b3 = btn("hlm", "3", "x_hl_3", "تین الفاظ", function () { if (!on) setOn(true, true); setMode(3); });
+  var b4 = btn("hlm", "4", "x_hl_4", "چار الفاظ", function () { if (!on) setOn(true, true); setMode(4); });
   btn("hlnav prev", "<span>›</span>", "x_hl_prev", "پچھلا", function () { go(-1); });
   btn("hlnav next", "<span>‹</span>", "x_hl_next", "اگلا", function () { go(1); });
   btn("hlclr", "✕", "x_hl_clear", "صاف کریں", function () { start = -1; paint(false); });

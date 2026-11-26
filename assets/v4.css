@@ -245,3 +245,8 @@ html[lang="en"] .hdc .hdref{ order:5; }
 [data-theme="dark"] .eidtx .eno{ background:#1d2b52; }
 .eidchart .pimg{ max-width:560px; margin-inline:auto; }
 @media (max-width:600px){ .eidtx .esteps > li, .eidtx .epara{ font-size:calc(17px * var(--z)); } .eidtx .etitle{ font-size:calc(22px * var(--z)); } .eidtx .esec{ padding:8px 12px 10px; } .eidtx .eno{ margin-top:8px; } .eidtx .edot{ margin-top:17px; } }
+/* ===== v5.0 ===== */
+/* v5.0: 1-4 word buttons — keep the pill inside narrow phones (tap targets stay >= 40px) */
+@media (max-width:420px){ .hlbar{ gap:3px; padding:4px 5px; } .hlbar button{ min-width:42px; height:44px; padding:0 6px; font-size:18px; }
+  .hlbar .hlnav span{ font-size:30px; } .hlbar .hlpen{ font-size:19px; padding:0 4px; } .hlbar .hlic{ display:none; } }
+@media (max-width:380px){ .hlbar{ gap:2px; padding:4px; } .hlbar button{ min-width:40px; height:42px; padding:0 4px; } }

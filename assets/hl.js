@@ -1,4 +1,4 @@
-/* v4.3: لفظ ہائی لائٹر — عربی متن کے الفاظ پر ٹیپ کریں؛ ۱ یا ۲ الفاظ؛ اگلا / پچھلا / صاف۔
+/* v4.3 / v5.0: لفظ ہائی لائٹر — عربی متن کے الفاظ پر ٹیپ کریں؛ ۱ سے ۴ الفاظ؛ اگلا / پچھلا / صاف۔
    متن کے حروف نہیں بدلتے: صرف ٹیکسٹ نوڈز کو <span> میں لپیٹا جاتا ہے۔ */
 (function () {
   "use strict";
@@ -37,7 +37,7 @@
   Array.prototype.forEach.call(roots, function (r) { r.normalize(); r.classList.add("hl-root"); });
 
   var mode = 1, start = -1;
-  try { mode = localStorage.getItem("qk-hl-mode") === "2" ? 2 : 1; } catch (e) {}
+  try { mode = Math.min(4, Math.max(1, parseInt(localStorage.getItem("qk-hl-mode"), 10) || 1)); } catch (e) {}
   function paint() {
     Array.prototype.forEach.call(document.querySelectorAll(".hlw.on"), function (s) { s.classList.remove("on", "on2"); });
     if (start < 0) { bar.classList.remove("active"); return; }
@@ -67,12 +67,14 @@
   var icon = document.createElement("span"); icon.className = "hlic"; icon.textContent = "🖍️"; icon.setAttribute("aria-hidden", "true"); bar.appendChild(icon);
   var b1 = btn("hlm", "1", "x_hl_1", "ایک لفظ", function () { setMode(1); });
   var b2 = btn("hlm", "2", "x_hl_2", "دو الفاظ", function () { setMode(2); });
+  var b3 = btn("hlm", "3", "x_hl_3", "تین الفاظ", function () { setMode(3); });
+  var b4 = btn("hlm", "4", "x_hl_4", "چار الفاظ", function () { setMode(4); });
   btn("hlnav prev", "<span>›</span>", "x_hl_prev", "پچھلا", function () { go(-1); });
   btn("hlnav next", "<span>‹</span>", "x_hl_next", "اگلا", function () { go(1); });
   btn("hlclr", "✕", "x_hl_clear", "صاف کریں", function () { start = -1; paint(); });
   function setMode(m) {
     mode = m; try { localStorage.setItem("qk-hl-mode", String(m)); } catch (e) {}
-    b1.setAttribute("aria-pressed", m === 1); b2.setAttribute("aria-pressed", m === 2); paint();
+    [b1, b2, b3, b4].forEach(function (b, n) { b.setAttribute("aria-pressed", m === n + 1 ? "true" : "false"); }); paint();
   }
   document.body.appendChild(bar); document.body.classList.add("has-hlbar");
   setMode(mode);

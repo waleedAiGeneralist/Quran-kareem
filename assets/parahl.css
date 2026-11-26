@@ -26,3 +26,8 @@ body.qwhl-on .pg{ cursor:pointer; }
 body.has-hlbar #toast{ bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
 body.has-hlbar .hdr-show{ bottom:calc(10px + 64px + 14px + env(safe-area-inset-bottom,0px)); }
 .hdr-off body.has-hlbar .totop{ bottom:calc(10px + 64px + 14px + 38px + 12px + env(safe-area-inset-bottom,0px)); }
+/* ===== v5.0 ===== */
+/* v5.0: 1-4 word buttons — keep the pill inside narrow phones (tap targets stay >= 40px) */
+@media (max-width:420px){ .hlbar{ gap:3px; padding:4px 5px; } .hlbar button{ min-width:42px; height:44px; padding:0 6px; font-size:18px; }
+  .hlbar .hlnav span{ font-size:30px; } .hlbar .hlpen{ font-size:19px; padding:0 4px; } .hlbar .hlic{ display:none; } }
+@media (max-width:380px){ .hlbar{ gap:2px; padding:4px; } .hlbar button{ min-width:40px; height:42px; padding:0 4px; } }

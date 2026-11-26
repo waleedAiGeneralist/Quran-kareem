@@ -76,7 +76,7 @@ window.QK_I18N_EXTRA = {
     x_hl_prev:"پچھلا",
     x_hl_next:"اگلا",
     x_hl_clear:"ہائی لائٹ صاف کریں",
-    x_hl_tip:"کسی لفظ پر ٹیپ کریں — وہ ہائی لائٹ ہو جائے گا۔ نیچے ۱ / ۲ سے ایک یا دو الفاظ چنیں اور اگلا / پچھلا سے آگے پیچھے جائیں۔",
+    x_hl_tip:"کسی لفظ پر ٹیپ کریں — وہ ہائی لائٹ ہو جائے گا۔ نیچے ۱ سے ۴ تک کے بٹن سے ایک سے چار الفاظ چنیں اور اگلا / پچھلا سے آگے پیچھے جائیں۔",
     sel_para:"پارہ چنیں",
     sel_surah:"سورت چنیں",
     x_nmg_jz:"نمازِ جنازہ — مکمل طریقہ",
@@ -110,8 +110,10 @@ window.QK_I18N_EXTRA = {
     x_nm_eid:"عیدین کا طریقہ",
     x_t_nm_eid:"عیدین کا طریقہ | مجتبیٰ آن لائن قرآن اکیڈمی",
     x_qhl_pen:"ہائی لائٹر آن / بند",
-    x_qhl_on:"ہائی لائٹر آن — کسی لفظ پر ٹیپ کریں؛ ۱ یا ۲ سے ایک یا دو الفاظ چنیں اور اگلا / پچھلا سے لفظ بہ لفظ آگے پیچھے جائیں۔",
-    x_qhl_off:"ہائی لائٹر بند — اب آیت پر کلک کرنے سے پوری آیت روشن ہوگی۔"
+    x_qhl_on:"ہائی لائٹر آن — کسی لفظ پر ٹیپ کریں؛ ۱ سے ۴ تک کے بٹن سے ایک سے چار الفاظ چنیں اور اگلا / پچھلا سے لفظ بہ لفظ آگے پیچھے جائیں۔",
+    x_qhl_off:"ہائی لائٹر بند — اب آیت پر کلک کرنے سے پوری آیت روشن ہوگی۔",
+    x_hl_3:"تین الفاظ ہائی لائٹ",
+    x_hl_4:"چار الفاظ ہائی لائٹ"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -189,7 +191,7 @@ window.QK_I18N_EXTRA = {
     x_hl_prev:"السابق",
     x_hl_next:"التالي",
     x_hl_clear:"مسح التظليل",
-    x_hl_tip:"اضغط على أي كلمة لتظليلها. اختر ١ / ٢ في الأسفل لتظليل كلمة أو كلمتين، وتنقّل بالتالي / السابق.",
+    x_hl_tip:"اضغط على أي كلمة لتظليلها. اختر من ١ إلى ٤ في الأسفل لتظليل كلمة واحدة حتى أربع كلمات، وتنقّل بالتالي / السابق.",
     sel_para:"اختر الجزء",
     sel_surah:"اختر السورة",
     x_nmg_jz:"صلاة الجنازة — الطريقة كاملة",
@@ -223,8 +225,10 @@ window.QK_I18N_EXTRA = {
     x_nm_eid:"صفة صلاة العيدين",
     x_t_nm_eid:"صفة صلاة العيدين | أكاديمية مجتبى للقرآن عبر الإنترنت",
     x_qhl_pen:"تشغيل / إيقاف أداة التظليل",
-    x_qhl_on:"أداة التظليل مفعّلة — اضغط على أي كلمة؛ اختر ١ أو ٢ لكلمة أو كلمتين، وتنقّل كلمةً كلمةً بالتالي / السابق.",
-    x_qhl_off:"أُوقفت أداة التظليل — النقر على آية يظلّل الآية كاملة."
+    x_qhl_on:"أداة التظليل مفعّلة — اضغط على أي كلمة؛ اختر من ١ إلى ٤ لتظليل كلمة واحدة حتى أربع كلمات، وتنقّل كلمةً كلمةً بالتالي / السابق.",
+    x_qhl_off:"أُوقفت أداة التظليل — النقر على آية يظلّل الآية كاملة.",
+    x_hl_3:"تظليل ثلاث كلمات",
+    x_hl_4:"تظليل أربع كلمات"
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -302,7 +306,7 @@ window.QK_I18N_EXTRA = {
     x_hl_prev:"Previous",
     x_hl_next:"Next",
     x_hl_clear:"Clear highlight",
-    x_hl_tip:"Tap any word to highlight it. Use 1 / 2 below for one or two words, and Next / Previous to step through.",
+    x_hl_tip:"Tap any word to highlight it. Use 1–4 below for one to four words, and Next / Previous to step through.",
     sel_para:"Choose para",
     sel_surah:"Choose surah",
     x_nmg_jz:"Namaz-e-Janaza — complete method",
@@ -336,7 +340,9 @@ window.QK_I18N_EXTRA = {
     x_nm_eid:"Eid Prayer Method",
     x_t_nm_eid:"Eid Prayer Method | Mujtaba Online Quran Academy",
     x_qhl_pen:"Highlighter on / off",
-    x_qhl_on:"Highlighter on — tap any word; choose 1 or 2 for one or two words, and step word by word with Next / Previous.",
-    x_qhl_off:"Highlighter off — clicking an ayah highlights the whole ayah again."
+    x_qhl_on:"Highlighter on — tap any word; choose 1–4 for one to four words, and step word by word with Next / Previous.",
+    x_qhl_off:"Highlighter off — clicking an ayah highlights the whole ayah again.",
+    x_hl_3:"Highlight 3 words",
+    x_hl_4:"Highlight 4 words"
   }
 };
