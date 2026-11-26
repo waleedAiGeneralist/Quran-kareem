@@ -1,41 +1,57 @@
-# قرآنِ حکیم — مکمل ۳۰ پارے (Quran Kareem, all 30 paras)
+# قرآنِ حکیم — Quran Kareem
 
-A static website of the complete Quran (16-line, four-colour tajweed Indo-Pak mushaf, 549 pages)
-built in the same style as the teacher's Para 1 and Para 3 sample pages (مجتبٰی آن لائن قرآن اکیڈمی).
+Static site for **Mujtaba Online Quran Academy** (مجتبیٰ آن لائن قرآن اکیڈمی): the complete 16-line, four-colour tajweed Indo-Pak mushaf (549 pages) and the academy’s lesson sections.
 
-- `index.html` is the home page. It has a card for each of the 30 paras and a searchable table of all 114 surahs.
-- `para-01.html` … `para-30.html` hold one para each, with ayah-by-ayah and word-by-word highlighting and mistake marking (the same engine as the Para 3 sample).
-- Every page has a **para dropdown** and a **surah dropdown**, plus links to the previous/next para and back to the home page.
-- Choosing a surah opens the right para and scrolls to the surah's heading. Direct links look like `para-15.html#s18`.
-- `pages/NNN.jpg` are the mushaf page images, named by the printed page number (001 = cover).
-- `assets/` holds the shared CSS/JS (`style.css`, `para.js`, `nav.js`, `data.js`, `i18n.js`, `index.js`) and the logo.
+**Live:** https://waleedaigeneralist.github.io/Quran-kareem/
 
-## v2 (client feedback)
-- **پٹی چھپائیں / پٹی دکھائیں**: hide the whole top bar for a full-screen mushaf; a small floating button brings it back (remembered on the device).
-- **Page zoom** (− ۱۰۰٪ +, 50%–250% in 25% steps, keyboard `+` `-` `0`); highlights stay aligned at every zoom; browser pinch-zoom still works.
-- Compact header (2 rows on desktop, 4 slim rows on phones), Google Fonts (Noto Nastaliq Urdu, Noto Naskh Arabic, Poppins).
-- Academy links on every mushaf page (moqacademy.pk / onlinequranstudy.com) and a footer with Facebook, websites and WhatsApp.
+GitHub Pages serves this repository from branch `main`, folder `/` (root).
 
-## v3
-- Roomier layout (centred header with consistent padding and gaps; padded content, index and footer).
-- Fonts: Noto Naskh Arabic for Urdu/Arabic UI, Amiri for Quranic para/surah names, Gulzar for the large academy name, Inter + Poppins for English.
-- Language switch اردو / عربي / English (saved on the device; English switches the layout to left-to-right). Only the website text changes; the Quran pages and data never change.
-- Light / dark theme button (follows the device setting until you choose; saved on the device).
+## Sections
 
-## Host on GitHub Pages
-1. Create a new repository on GitHub (e.g. `quran-kareem`).
-2. Upload the **contents** of this folder to the repository root. `index.html` must be at the top level.
-   - With git:
-     ```
-     git init
-     git add .
-     git commit -m "Quran Kareem site"
-     git branch -M main
-     git remote add origin https://github.com/<your-user>/quran-kareem.git
-     git push -u origin main
-     ```
-   - Or use GitHub's web "Add file → Upload files". There are about 590 files and roughly 155 MB in total. The largest file is about 330 KB, so it is well under GitHub's limits. You can upload in a few batches if needed.
-3. In the repository go to **Settings → Pages**. Under "Build and deployment" pick **Deploy from a branch**, then branch `main` and folder `/ (root)`. Save.
-4. After a minute the site is live at `https://<your-user>.github.io/quran-kareem/`.
+Home tiles in `index.html`, in order:
 
-All paths are relative, so the site also works when you open `index.html` straight from your computer.
+1. Quran (`quran.html`) — 30 paras and all 114 surahs
+2. Noorani Qaida (`qaida.html`)
+3. Six Kalimas (`kalimas.html`)
+4. Namaz and Wudu (`namaz-wudu.html`)
+5. Asma ul Husna (`asma-ul-husna.html`)
+6. Asma al-Nabi ﷺ (`asma-un-nabi.html`)
+7. Daily Duas (`daily-duas.html`)
+8. Rabbana duas (`rabbana-duas.html`)
+9. Ahadith (`ahadith.html`)
+10. Tajweed Course (`tajweed.html`) — 49 lessons
+11. Islamic Knowledge (`islamic-knowledge.html`) — Bahishti Zewar and Taleem ul Islam; website only, hidden in the Android app
+
+`para-01.html` … `para-30.html` hold one para each, with a para dropdown, a surah dropdown, and previous/next links. `pages/NNN.jpg` are the mushaf scans, named by the printed page number (`001` is the cover). Choosing a surah opens the right para and scrolls to that surah, for example `para-15.html#s18`.
+
+## Run locally
+
+Any static file server works. From the repository root:
+
+```bash
+python3 -m http.server
+```
+
+Then open http://127.0.0.1:8000/ . Paths are relative, so the site also opens if you load `index.html` directly, but a local server is the better check for scripts and the cache-buster query strings.
+
+## Android app
+
+The offline app is built from a copy of this site. The published release is v1.0:
+
+https://github.com/waleedAiGeneralist/Quran-kareem/releases/download/v1.0/QuranKareem-v1.apk
+
+Islamic Knowledge is not part of the app. See `AGENTS.md` before making a new APK copy.
+
+## For contributors and agents
+
+Read [AGENTS.md](AGENTS.md) before editing. It has the file map, the rules for Quranic text, `qaida.html`, the Content-Security-Policy, and the cache-buster, plus a short version history.
+
+## Already on the site
+
+These earlier notes are still true:
+
+- Hide or show the top bar (remembered on the device), and page zoom from 50% to 250%.
+- Academy links (moqacademy.pk and onlinequranstudy.com) and a footer with the websites and WhatsApp.
+- Language switch اردو / عربي / English, saved on the device. English uses a left-to-right layout. Only the interface text changes; the Quran pages do not.
+- Light and dark theme, following the device until a choice is saved.
+- Fonts, loaded only from the hosts already allowed by each page’s Content-Security-Policy (`fonts.googleapis.com` and `fonts.gstatic.com`): Noto Naskh Arabic, Amiri, Gulzar, Scheherazade New, Inter, and Poppins.
