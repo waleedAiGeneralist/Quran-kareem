@@ -299,3 +299,29 @@ html.qk-app .web-only{ display:none !important; }
 .bkbar .pgq.mini .pgq-msg{ position:static; inset:auto; white-space:normal; background:transparent; box-shadow:none; margin:0; min-height:0; }
 .bkbar .pgq.mini .pgq-msg:not(:empty){ padding:2px 0 0; box-shadow:none; }
 .bkbar .pgq.mini .pgq-msg.err{ color:#a21; }
+
+
+
+
+
+/* ===== v5.2 ===== */
+/* Tajweed Course: responsive card grid + tap-to-open full-size viewer */
+.pimgs.tjgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap:14px; max-width:1240px; margin-inline:auto; }
+.pimgs.tjgrid .pimg{ max-width:none; margin:0; }
+.tjopen{ display:block; width:100%; padding:0; margin:0; border:0; background:transparent; cursor:zoom-in; overflow:auto; }
+.tjopen:focus-visible{ outline:3px solid var(--accent, #c9a227); outline-offset:-3px; }
+.tjgrid .pimg img{ aspect-ratio:1 / 1; }
+html.tj-open, html.tj-open body{ overflow:hidden; }
+.tjlb{ position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; background:#0a0f22; }
+.tjlb[hidden]{ display:none; }
+.tjlb-bar{ display:flex; align-items:center; gap:6px; padding:8px max(8px, env(safe-area-inset-right)) 8px max(8px, env(safe-area-inset-left)); padding-top:max(8px, env(safe-area-inset-top)); background:#16264e; color:#fff; flex-wrap:wrap; justify-content:center; }
+.tjlb-cap{ flex:1 1 auto; text-align:center; font-weight:700; font-size:15px; min-width:90px; }
+.tjb{ min-width:44px; height:44px; padding:0 10px; border-radius:10px; border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.1); color:#fff; font-size:20px; font-weight:700; cursor:pointer; line-height:1; }
+.tjb:disabled{ opacity:.35; cursor:default; }
+.tjb.tjz0{ font-size:14px; min-width:58px; }
+.tjb.tjx{ background:#a32020; border-color:#a32020; }
+.tjlb-sc{ flex:1 1 auto; overflow:auto; -webkit-overflow-scrolling:touch; display:flex; align-items:flex-start; justify-content:center; padding:10px; touch-action:pan-x pan-y pinch-zoom; }
+.tjlb-img{ flex:none; display:block; margin:auto; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; background:#fff; user-select:none; -webkit-user-select:none; cursor:zoom-in; }
+.tjlb-img.zoomed{ max-width:none; max-height:none; height:auto; margin:0 auto; cursor:zoom-out; }
+@media (max-width:420px){ .tjb{ min-width:40px; height:42px; padding:0 8px; } .tjb.tjz0{ min-width:52px; } .tjlb-cap{ flex-basis:100%; order:-1; } }
+/* ===== /v5.2 ===== */

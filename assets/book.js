@@ -5,6 +5,7 @@
   if (h.getAttribute("data-pg-mode") !== "book") return;
   var MIN = parseInt(h.getAttribute("data-pg-min") || "1", 10);
   var MAX = parseInt(h.getAttribute("data-pg-max") || "1", 10);
+  var LBL = h.getAttribute("data-pg-label") || "x_page_n";  /* v5.2 */
   function T(k, v){ var I = window.QK_I18N; return I ? I.t(k, v) : k; }
   function N(n){ var I = window.QK_I18N; return I ? I.num(n) : String(n); }
   function cur(){
@@ -14,7 +15,7 @@
   function paint(n){
     n = n || cur();
     var el = document.querySelector(".bkcur");
-    if (el){ el.setAttribute("data-n", String(n)); el.textContent = T("x_page_n", { n:N(n) }); }
+    if (el){ el.setAttribute("data-n", String(n)); el.textContent = T(LBL, { n:N(n) }); }
     var tot = document.querySelector(".bktot");
     if (tot){ tot.setAttribute("data-num", String(MAX)); tot.textContent = N(MAX); }
     var inp = document.querySelector(".pgq-in");

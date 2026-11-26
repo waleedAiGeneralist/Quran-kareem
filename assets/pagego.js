@@ -46,7 +46,7 @@
     var b = bounds();
     var inp = box.querySelector(".pgq-in"), msg = box.querySelector(".pgq-msg"), n = toInt(inp.value);
     if (isNaN(n) || n < b.min || n > b.max){
-      msg.textContent = T("x_pgq_bad", { a:N(b.min), b:N(b.max) }); msg.classList.add("err"); inp.focus(); if (inp.select) inp.select(); return;
+      msg.textContent = T(document.documentElement.getAttribute("data-pg-bad") || "x_pgq_bad", { a:N(b.min), b:N(b.max) }); msg.classList.add("err"); inp.focus(); if (inp.select) inp.select(); return;
     }
     msg.classList.remove("err");
     if (b.book){
@@ -72,9 +72,12 @@
     var line = headerOff() + 40, c;
     if (b.book){
       c = b.min;
+      var bt = -Infinity;  /* v5.2: in a multi-column grid, cards sharing a row count as the first of that row */
       for (var n = b.min; n <= b.max; n++){
         var a = document.getElementById("p-" + n);
-        if (a && a.getBoundingClientRect().top <= line) c = n;
+        if (!a) continue;
+        var t = a.getBoundingClientRect().top;
+        if (t <= line && t > bt + 1){ bt = t; c = n; }
       }
       return c;
     }
