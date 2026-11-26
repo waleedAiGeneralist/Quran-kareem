@@ -108,7 +108,10 @@ window.QK_I18N_EXTRA = {
     x_eid_chart:"نمازِ عید کی ترتیب",
     x_nm_eid_intro:"نمازِ عید کا طریقہ (حنفی) — نیت، پہلی رکعت، دوسری رکعت اور نماز کے بعد؛ نیچے نمازِ عید کی ترتیب کا چارٹ۔",
     x_nm_eid:"عیدین کا طریقہ",
-    x_t_nm_eid:"عیدین کا طریقہ | مجتبیٰ آن لائن قرآن اکیڈمی"
+    x_t_nm_eid:"عیدین کا طریقہ | مجتبیٰ آن لائن قرآن اکیڈمی",
+    x_qhl_pen:"ہائی لائٹر آن / بند",
+    x_qhl_on:"ہائی لائٹر آن — کسی لفظ پر ٹیپ کریں؛ ۱ یا ۲ سے ایک یا دو الفاظ چنیں اور اگلا / پچھلا سے لفظ بہ لفظ آگے پیچھے جائیں۔",
+    x_qhl_off:"ہائی لائٹر بند — اب آیت پر کلک کرنے سے پوری آیت روشن ہوگی۔"
   },
   ar: {
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
@@ -218,7 +221,10 @@ window.QK_I18N_EXTRA = {
     x_eid_chart:"ترتيب صلاة العيد",
     x_nm_eid_intro:"صفة صلاة العيد (على المذهب الحنفي) — النية، الركعة الأولى، الركعة الثانية، وما بعد الصلاة؛ وفي الأسفل مخطط ترتيب صلاة العيد. (النص بالأردية)",
     x_nm_eid:"صفة صلاة العيدين",
-    x_t_nm_eid:"صفة صلاة العيدين | أكاديمية مجتبى للقرآن عبر الإنترنت"
+    x_t_nm_eid:"صفة صلاة العيدين | أكاديمية مجتبى للقرآن عبر الإنترنت",
+    x_qhl_pen:"تشغيل / إيقاف أداة التظليل",
+    x_qhl_on:"أداة التظليل مفعّلة — اضغط على أي كلمة؛ اختر ١ أو ٢ لكلمة أو كلمتين، وتنقّل كلمةً كلمةً بالتالي / السابق.",
+    x_qhl_off:"أُوقفت أداة التظليل — النقر على آية يظلّل الآية كاملة."
   },
   en: {
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
@@ -328,6 +334,9 @@ window.QK_I18N_EXTRA = {
     x_eid_chart:"Order of the Eid prayer",
     x_nm_eid_intro:"The method of the Eid prayer (Hanafi) — Niyyat, first rak‘ah, second rak‘ah and after the prayer (text in Urdu); the chart below shows the order of the Eid prayer.",
     x_nm_eid:"Eid Prayer Method",
-    x_t_nm_eid:"Eid Prayer Method | Mujtaba Online Quran Academy"
+    x_t_nm_eid:"Eid Prayer Method | Mujtaba Online Quran Academy",
+    x_qhl_pen:"Highlighter on / off",
+    x_qhl_on:"Highlighter on — tap any word; choose 1 or 2 for one or two words, and step word by word with Next / Previous.",
+    x_qhl_off:"Highlighter off — clicking an ayah highlights the whole ayah again."
   }
 };

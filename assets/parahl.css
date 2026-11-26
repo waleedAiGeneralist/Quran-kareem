@@ -1,0 +1,28 @@
+/* v4.9: para-page word highlighter — same navy/gold pill toolbar as the kalimas highlighter (v4.css .hlbar) */
+body.has-hlbar{ padding-bottom:84px; }
+.hlbar{ position:fixed; z-index:50; left:50%; transform:translateX(-50%); bottom:calc(10px + env(safe-area-inset-bottom,0px)); direction:rtl;
+  display:flex; align-items:center; gap:6px; padding:6px 8px; border-radius:999px; background:var(--navy,#16264e); border:2px solid var(--gold,#e9c766);
+  box-shadow:0 6px 20px rgba(0,0,0,.3); }
+.hlbar button{ min-width:48px; height:48px; border-radius:999px; border:2px solid transparent; background:rgba(255,255,255,.12); color:#fff;
+  font:700 20px/1 "Inter","Noto Naskh Arabic",sans-serif; cursor:pointer; display:grid; place-items:center; padding:0 10px; -webkit-tap-highlight-color:transparent; }
+.hlbar button:hover{ background:rgba(255,255,255,.22); }
+.hlbar button.hlm[aria-pressed="true"]{ background:#ffe14d; color:#111; border-color:#fff; }
+.hlbar .hlnav span{ font-size:34px; line-height:.8; margin-top:-4px; }
+.hlbar .hlclr{ font-size:18px; }
+.hlbar .hlpen{ font-size:22px; padding:0 8px; }
+.hlbar .hlpen[aria-pressed="true"]{ background:#ffe14d; border-color:#fff; box-shadow:0 0 0 3px rgba(255,225,77,.35); }
+.qwbar .hlpen[aria-pressed="false"] ~ button{ opacity:.55; }
+.qwbar:not(.active) .hlnav.prev, .qwbar:not(.active) .hlclr{ opacity:.45; }
+@media (max-width:420px){ .hlbar{ gap:4px; padding:5px 6px; } .hlbar button{ min-width:46px; height:46px; padding:0 8px; } }
+@media (max-width:350px){ .hlbar button{ min-width:40px; height:42px; padding:0 6px; } }
+@media print{ .hlbar{ display:none !important; } }
+/* word boxes on the scan */
+.pg svg g.qwhl{ mix-blend-mode:multiply; pointer-events:none; }
+.pg svg g.qwhl rect{ stroke-width:3.5; }
+.pg svg g.qwhl rect.qw1{ fill:rgba(255,221,51,.9); stroke:#b45309; }
+.pg svg g.qwhl rect.qw2{ fill:rgba(255,140,175,.85); stroke:#be123c; }
+body.qwhl-on .pg{ cursor:pointer; }
+/* keep the floating controls clear of the toolbar */
+body.has-hlbar #toast{ bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
+body.has-hlbar .hdr-show{ bottom:calc(10px + 64px + 14px + env(safe-area-inset-bottom,0px)); }
+.hdr-off body.has-hlbar .totop{ bottom:calc(10px + 64px + 14px + 38px + 12px + env(safe-area-inset-bottom,0px)); }
