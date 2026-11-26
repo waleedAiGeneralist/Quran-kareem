@@ -39,4 +39,17 @@
   document.addEventListener("dragstart", function(e){ if (e.target.tagName === "IMG") e.preventDefault(); });
   /* اسپلش */
   if (root.classList.contains("splash-on")) setTimeout(function(){ root.classList.remove("splash-on"); }, 1800);
+  /* v5.1: website-only sections — hidden inside the Android app */
+  (function(){
+    var app = false;
+    try { app = (location.hostname || "").toLowerCase() === "appassets.androidplatform.net"; } catch (e) {}
+    if (!app) return;
+    document.documentElement.classList.add("qk-app");
+    Array.prototype.forEach.call(document.querySelectorAll(".web-only"), function(el){
+      el.hidden = true; el.setAttribute("aria-hidden", "true");
+    });
+    if (document.body && document.body.classList.contains("ik-page")) {
+      location.replace("index.html");
+    }
+  })();
 })();

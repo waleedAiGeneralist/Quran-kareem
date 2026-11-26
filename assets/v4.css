@@ -250,3 +250,52 @@ html[lang="en"] .hdc .hdref{ order:5; }
 @media (max-width:420px){ .hlbar{ gap:3px; padding:4px 5px; } .hlbar button{ min-width:42px; height:44px; padding:0 6px; font-size:18px; }
   .hlbar .hlnav span{ font-size:30px; } .hlbar .hlpen{ font-size:19px; padding:0 4px; } .hlbar .hlic{ display:none; } }
 @media (max-width:380px){ .hlbar{ gap:2px; padding:4px; } .hlbar button{ min-width:40px; height:42px; padding:0 4px; } }
+
+/* ===== v5.1 ===== */
+html.qk-app .web-only{ display:none !important; }
+.bkgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:18px; }
+.bkcard{ display:flex; flex-direction:column; align-items:center; text-align:center; text-decoration:none; color:inherit;
+  background:var(--surface); border:1.8px solid var(--gold-deep); border-radius:18px; padding:14px 12px 16px;
+  box-shadow:0 2px 10px rgba(16,29,61,.10); transition:transform .12s, box-shadow .12s; }
+.bkcard:hover, .bkcard:focus-visible{ transform:translateY(-3px); box-shadow:0 8px 22px rgba(20,30,70,.22); border-color:var(--gold-deep); }
+.bkcard img{ width:min(100%, 200px); height:auto; border-radius:8px; border:1px solid var(--border); background:#fff; }
+.bkcard .tnm{ font-family:var(--f-brand, inherit); font-size:22px; font-weight:700; margin-top:10px; line-height:1.5; color:var(--title); }
+.bkcard .tlat{ font-size:14.5px; opacity:.85; margin-top:1px; }
+.bkcard .tauth{ font-size:13.5px; margin-top:6px; line-height:1.6; color:var(--muted, inherit); }
+.bkbar{ position:sticky; top:var(--hdr, 72px); z-index:25;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 14px;
+  margin:0 -4px 14px; padding:6px 10px;
+  background:var(--surface); border:1.8px solid var(--gold-deep); border-radius:14px;
+  box-shadow:0 2px 8px rgba(16,29,61,.12); }
+.bkbar .pgq.mini{ flex:1 1 auto; min-width:0; }
+.bkstat{ font-weight:700; font-size:15px; white-space:nowrap; color:var(--title); }
+.bkpg{ scroll-margin-top:calc(var(--hdr, 72px) + 64px); }
+.pimgs.books{ max-width:1100px; margin-inline:auto; }
+@media (max-width:600px){
+  .bkgrid{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+  .bkcard{ padding:10px 8px 12px; border-radius:14px; }
+  .bkcard img{ width:100%; }
+  .bkcard .tnm{ font-size:18px; }
+  .bkcard .tlat, .bkcard .tauth{ font-size:12.5px; }
+  .bkbar{ margin:0 0 12px; padding:6px 8px; border-radius:12px; }
+  .bkbar .pgq.mini{ flex:1 1 100%; }
+  .bkbar .pgq.mini .pgq-row{ justify-content:stretch; }
+  .bkbar .pgq.mini .pgq-in{ flex:1 1 0; width:0; }
+  .bkbar .pgq.mini .pgq-step{ width:44px; height:44px; }
+  .bkbar .pgq.mini .pgq-go{ height:44px; padding:0 16px; }
+}
+@media (max-width:360px){
+  .bkgrid{ grid-template-columns:1fr; }
+}
+.visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* ===== v5.1b ===== */
+/* Reserve full-width aspect boxes so lazy pages do not collapse (page-number jump stays accurate) */
+.pimgs.books .pimg, .pimgs.books .pimw{ width:100%; }
+.pimgs.books .pimw{ display:block; }
+.pimgs.books .pimg img{ width:calc(100% * var(--z, 1)); max-width:none; height:auto; }
+/* Keep the "went to page N" note inside the bar, not over the page */
+.bkbar .pgq.mini{ position:relative; }
+.bkbar .pgq.mini .pgq-msg{ position:static; inset:auto; white-space:normal; background:transparent; box-shadow:none; margin:0; min-height:0; }
+.bkbar .pgq.mini .pgq-msg:not(:empty){ padding:2px 0 0; box-shadow:none; }
+.bkbar .pgq.mini .pgq-msg.err{ color:#a21; }
