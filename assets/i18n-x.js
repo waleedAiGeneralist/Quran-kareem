@@ -1,6 +1,7 @@
 /* v4: ہوم اسکرین اور نئے سیکشنز کی عبارتیں (صرف ویب سائٹ کا انٹرفیس؛ دینی متن صفحات میں ہے اور نہیں بدلتا) */
 window.QK_I18N_EXTRA = {
   ur: {
+    /* v53: وقف کے نشانات */ x_wq_btn:"وقف", x_wq_title:"وقف کے نشانات", x_wq_on:"وقف کے نشانات آن — رنگین نشان پر ٹیپ کریں تو مطلب نظر آئے گا", x_wq_off:"وقف کے نشانات بند", x_wq_m:"مـ — لازمی رکیں", x_wq_la:"لا — یہاں نہ رکیں، ملا کر آگے پڑھیں", x_wq_t:"ط — رکنا بہتر ہے", x_wq_ql:"قلے — رکنا بہتر ہے، ملانا بھی جائز", x_wq_j:"ج — رکیں یا ملائیں، دونوں جائز", x_wq_sl:"صلے — ملا کر پڑھنا بہتر، رکنا بھی جائز", x_wq_z:"ز — ملا کر پڑھنا بہتر", x_wq_s:"ص — ملا کر پڑھنا بہتر، سانس ٹوٹے تو رک سکتے ہیں", x_wq_q:"ق — ملا کر پڑھنا بہتر", x_wq_qf:"قف — رک جائیں", x_wq_mu:"∴ ∴ — دو میں سے ایک جگہ رکیں، دونوں پر نہیں", x_wq_sk:"سکتہ — سانس توڑے بغیر ذرا سا رکیں", x_wq_wq:"وقفہ — سانس توڑے بغیر سکتہ سے ذرا زیادہ رکیں", x_wq_rh:"۞ رُبع — پارے کا چوتھائی", x_wq_sj:"۩ سجدۂ تلاوت", x_wq_g_stop:"رکیں", x_wq_g_go:"ملائیں",
     x_home:"ہوم", x_back:"واپس ہوم اسکرین پر", x_jump:"فہرست", x_apptitle:"قرآن و دینی تعلیم", x_choose:"ایک سیکشن منتخب کریں",
     x_quran:"قرآن کریم", x_asma:"اسماء الحسنیٰ", x_nabi:"اسماء النبی ﷺ", x_kalima:"چھ کلمے", x_wudu:"نماز و وضو", x_hadith:"احادیث",
     x_chalis:"چالیس احادیث", x_duas:"روزمرہ کی دعائیں", x_rabbana:"ربنا دعائیں", x_qaida:"نورانی قاعدہ",
@@ -160,6 +161,7 @@ window.QK_I18N_EXTRA = {
     x_ik_bar:"صفحہ نمبر"
   },
   ar: {
+    /* v53: وقف کے نشانات */ x_wq_btn:"الوقف", x_wq_title:"علامات الوقف", x_wq_on:"علامات الوقف مفعّلة — اضغط على العلامة الملوّنة لمعرفة معناها", x_wq_off:"علامات الوقف متوقفة", x_wq_m:"مـ — وقف لازم", x_wq_la:"لا — لا تقف هنا، صِلْ القراءة", x_wq_t:"ط — الوقف أولى", x_wq_ql:"قلى — الوقف أولى مع جواز الوصل", x_wq_j:"ج — يجوز الوقف والوصل", x_wq_sl:"صلى — الوصل أولى مع جواز الوقف", x_wq_z:"ز — الوصل أولى", x_wq_s:"ص — الوصل أولى ويُرخَّص الوقف", x_wq_q:"ق — الوصل أولى", x_wq_qf:"قف — قِف", x_wq_mu:"∴ ∴ — قِف على أحدهما لا كليهما", x_wq_sk:"سكتة — سكوت يسير بلا تنفّس", x_wq_wq:"وقفة — سكوت أطول قليلًا بلا تنفّس", x_wq_rh:"۞ ربع الحزب", x_wq_sj:"۩ موضع السجدة", x_wq_g_stop:"قِف", x_wq_g_go:"صِلْ",
     x_home:"الرئيسية", x_back:"العودة إلى الشاشة الرئيسية", x_jump:"الفهرس", x_apptitle:"القرآن والتعليم الديني", x_choose:"اختر قسمًا",
     x_quran:"القرآن الكريم", x_asma:"الأسماء الحسنى", x_nabi:"أسماء النبي ﷺ", x_kalima:"الكلمات الست", x_wudu:"الصلاة والوضوء", x_hadith:"الأحاديث",
     x_chalis:"الأربعون حديثًا", x_duas:"الأدعية اليومية", x_rabbana:"أدعية ربنا", x_qaida:"القاعدة النورانية",
@@ -319,6 +321,7 @@ window.QK_I18N_EXTRA = {
     x_ik_bar:"رقم الصفحة"
   },
   en: {
+    /* v53: وقف کے نشانات */ x_wq_btn:"Stops", x_wq_title:"Waqf (stop) signs", x_wq_on:"Stop signs on — tap a coloured sign to see its meaning", x_wq_off:"Stop signs off", x_wq_m:"م — must stop", x_wq_la:"لا — do NOT stop here; keep reading (continue)", x_wq_t:"ط — better to stop", x_wq_ql:"قلے — better to stop, continuing allowed", x_wq_j:"ج — stop or continue, both allowed", x_wq_sl:"صلے — better to continue, stopping allowed", x_wq_z:"ز — better to continue", x_wq_s:"ص — better to continue; may stop if out of breath", x_wq_q:"ق — better to continue", x_wq_qf:"قف — stop", x_wq_mu:"∴ ∴ — stop at one of the two, never both", x_wq_sk:"سکتہ — brief pause without taking a breath", x_wq_wq:"وقفہ — slightly longer pause, no breath", x_wq_rh:"۞ quarter of the para", x_wq_sj:"۩ place of sajdah", x_wq_g_stop:"Stop", x_wq_g_go:"Continue",
     x_home:"Home", x_back:"Back to the home screen", x_jump:"Contents", x_apptitle:"Quran & Islamic Learning", x_choose:"Choose a section",
     x_quran:"Quran Kareem", x_asma:"Asma ul Husna", x_nabi:"Asma al-Nabi ﷺ", x_kalima:"Six Kalimas", x_wudu:"Namaz & Wudu", x_hadith:"Hadith",
     x_chalis:"Chalis Ahadith", x_duas:"Daily Duas", x_rabbana:"Rabbana Duas", x_qaida:"Noorani Qaida",

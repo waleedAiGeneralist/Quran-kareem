@@ -40,6 +40,7 @@ Other important files:
 - `assets/totop.js` and `assets/totop.css` — back-to-top button.
 - `assets/book.js` — page reader used by Bahishti Zewar (475 pages) and Taleem ul Islam (231 pages).
 - `assets/tj.js` — Tajweed card viewer (zoom, next/previous, close).
+- `assets/waqf.js`, `assets/waqf.css`, `assets/waqf/para-01.js`–`para-30.js` — waqf (stop-sign) colouring on para pages. A toggle, off by default. Each data file lists every printed stop sign as `[x, y, type, path]` in scan pixels; `path` traces only the sign's own black ink pixels.
 - `assets/v4.js` and `assets/v4.css` — shared shell: theme, app detection, layout. `assets/style.css`, `assets/boot.js`, `assets/nav.js`, `assets/para.js`, `assets/data.js`, `assets/index.js`, and `assets/qnames.css` are the older shared pieces still loaded by the shell.
 - `img/ik/bz/` — Bahishti Zewar pages `001.webp`–`475.webp` plus `thumb.webp`. `img/ik/ti/` — Taleem ul Islam `001.webp`–`231.webp` plus `thumb.webp`.
 - `assets/logo.jpg` — academy logo.
@@ -50,10 +51,11 @@ Other important files:
 2. **Do not modify `qaida.html`.** The Mujtaba Qaida design stays as it is, including its lack of a `?v=` cache-buster.
 3. **Keep the Content-Security-Policy.** The policy on each page is `default-src 'self'`, with `script-src 'self'` and the two Google Fonts hosts already listed (`https://fonts.googleapis.com` for styles, `https://fonts.gstatic.com` for font files). Do not add inline scripts, other CDNs, analytics, or trackers. New behaviour goes in an external file under `assets/`.
 4. **Every page keeps `translate="no"` and `class="notranslate"`** so the browser does not auto-translate the Quran.
-5. **Bump `?v=NN` on each release** on every page and asset reference, except `qaida.html`. The current value is **52**. A docs-only commit does not need a bump.
+5. **Bump `?v=NN` on each release** on every page and asset reference, except `qaida.html`. The current value is **53**. A docs-only commit does not need a bump.
 6. **Islamic Knowledge is website only.** That is `islamic-knowledge.html`, `ik-bahishti-zewar.html`, `ik-taleem-ul-islam.html`, `img/ik/`, and the `assets/book.js` usage on those pages. Elements with class `web-only` are hidden in the app. Exclude these files from any APK copy. Tajweed is not in this group.
 7. **Do not add source PDFs or download links** for the books, slides, or mushaf.
-8. **Check layout before pushing a visual change:** 360px, 390px, and desktop; Urdu RTL; no horizontal scroll; no console errors. Also glance at Arabic and English if the change touches `i18n-x.js`.
+8. **Waqf colouring tints only the stop sign's own ink pixels** (teacher's rule). Never draw circles, boxes, or highlights on Quran words or letters, and never edit the page images. Do not change sign positions or types in `assets/waqf/` without the teacher's approval.
+9. **Check layout before pushing a visual change:** 360px, 390px, and desktop; Urdu RTL; no horizontal scroll; no console errors. Also glance at Arabic and English if the change touches `i18n-x.js`.
 
 ## Workflow
 
@@ -78,6 +80,7 @@ Open items:
 
 Version history on `main` (newest first):
 
+- 2026-11-27, v5.3: Waqf stop-sign colouring on para pages (`assets/waqf.js`, `assets/waqf.css`, `assets/waqf/para-01.js`–`30.js`, `x_wq_*` keys in `i18n-x.js`). Toggle, off by default. It tints only the sign's own ink pixels and never draws on Quran words (teacher's rule). Cache `?v=53`. `qaida.html` and page images untouched.
 - 2026-11-26, v5.2 (`4ff53e5`): Tajweed Course section, 49 lesson cards, `assets/tj.js`, cache `?v=52`. `qaida.html` untouched.
 - 2026-11-26, v5.1 (`a94b35f`): Islamic Knowledge (Bahishti Zewar 475 pages, Taleem ul Islam 231 pages). Website only. `?v=51`.
 - 2026-11-26, v5.0 (`961e79d`): Highlighter buttons for 1/2/3/4 words. Cache `?v=50`.

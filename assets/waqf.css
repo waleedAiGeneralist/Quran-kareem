@@ -1,0 +1,18 @@
+/* v53: waqf (stop) signs — only the sign's own pixels are coloured; nothing is drawn over letters */
+.pg svg g.qwaqf{ pointer-events:none; }
+.pg svg g.qwaqf path{ shape-rendering:crispEdges; }
+.pg svg g.qwaqf .wqhit{ pointer-events:all; cursor:help; }
+#bWaqf[aria-pressed="true"]{ background:#ffe14d; color:#111; border-color:#b45309; }
+.wqleg{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:6px auto 10px; max-width:900px; }
+.wqleg[hidden]{ display:none; }
+.wqleg .wqk{ display:inline-flex; align-items:center; gap:5px; padding:2px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.15); background:var(--card,#fff); color:inherit; font:700 19px/1.35 "Noto Naskh Arabic","Amiri",serif; cursor:pointer; }
+.wqleg .wqk small{ font:600 12px/1 system-ui,sans-serif; opacity:.85; }
+.wqleg .wqk-la{ border-color:#00a83a; background:#e8f7ec; }
+.wqleg .wqk-m{ border-color:#d50000; }
+/* desktop: the extra button must not squeeze the page-number box — let the toolbar wrap instead */
+@media (min-width:761px){
+  .toolbar.has-waqf-bar{ flex-wrap:wrap; row-gap:8px; gap:10px; }
+  .toolbar.has-waqf-bar .pgq.mini .pgq-in{ flex:none; width:104px; min-width:104px; }
+  .toolbar.has-waqf-bar .pgq.mini .pgq-in::placeholder{ font-size:15px; font-weight:600; }
+}
+@media (max-width:760px){ .tools.has-waqf{ grid-template-columns:repeat(8,minmax(0,1fr)) !important; } }
